@@ -1,0 +1,38 @@
+/*background-color*/
+#bc {
+  background-color: lightblue;
+}
+/*background-clip*/
+.div-test {
+  background: peachpuff;
+  padding: 30px;
+  border: 5px dashed orange;
+  margin-bottom: 20px;
+}
+#bc1 {
+  background-clip: content-box;
+}
+#bc2 {
+  /*content + padding */
+  background-clip: padding-box;
+}
+#bc3 {
+  /*content + padding + border */
+  background-clip: border-box;
+}
+#test {
+  width: 400px;
+  height: 300px;
+  border: 2px solid;
+  /*size : 이미지크기조절 px, contain, cover*/
+  /*contain : 약간 자라서, cover : 무조건 다 보이게*/
+  background-image: url("assets/bg.jpg");
+  background-size: cover;
+  /*repeat : 반복여부 설정 on - repeat */
+  background-repeat: no-repeat;
+  /*position : 이미지 위치 설정 center , bottom*/
+  background-position: bottom;
+  /*attachment : 스크롤 여부 확인 */
+  background-attachment: fixed;
+  /*background : color image position/ size repeat attachment (순서)*/
+}
