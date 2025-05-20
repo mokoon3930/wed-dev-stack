@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: purple;
+  background: linear-gradient(red, blue);
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+}
+#profile-card {
+  width: 400px;
+  margin: auto;
+  border: 3px solid white;
+  border-radius: 25px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+/*.profile-img {
+  width: 200px;
+  height: 200px;
+  background: khaki;
+  margin: auto;
+  border-radius: 50%;
+  background-image: url(assets/bao.png);
+  background-size: cover;
+  background-position: center;
+}*/
+#profile-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#profile-card a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 3px solid;
+  margin: 15px;
+  padding: 10px;
+  /*border-radius: 25px;*/
+}
+/*마우스 올렸을때*/
+#profile-card a:hover {
+  background: white;
+  color: black;
+}
