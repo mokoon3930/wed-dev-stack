@@ -1,0 +1,101 @@
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: black;
+  color: white;
+  line-height: 150px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: auto;
+}
+.transition {
+  background-color: cornflowerblue;
+  /*transition: all 10s*/
+  /*transition-property:  backgroud-color; font-size*/
+  /*proprety : 속성명시 duartion : 전환시간 timing-function : 전환속도 곡선
+   delay 전환 시간 지연 시간*/
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: all 2s ease-in-out;
+}
+.transition:hover {
+  background-color: coral;
+  font-size: 2rem;
+  transform: scale(1.5) rotate(15deg);
+  border-radius: 50%;
+}
+/*transfrom*/
+.transfrom {
+  background: coral;
+}
+.transfrom-rotate {
+  background: orange;
+}
+.transfrom-rotate:hover {
+  transform: rotate(45deg);
+}
+.transform-translate {
+  background: mediumaquamarine;
+}
+/*translate : 이동 (x,y)*/
+.transform-translate:hover {
+  transform: (40px, 20px);
+}
+/*skew :  기울이기*/
+.transform-skew {
+  background-color: dodgerblue;
+}
+.transform-skew:hover {
+  transform: skew(10deg, 20deg);
+}
+/*animation*/
+@keyframes bounce {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(1.5);
+  }
+  100% {
+    transform: translate(25px, 50px);
+  }
+}
+@keyframes bounce2 {
+  100% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+.animation-once {
+  background-color: crimson;
+  /*animation: 애니메이션명 지속시간 속도곡선 횟수*/
+  animation: bounce 1s ease-in-out 1;
+}
+.animation-alternate {
+  background: indigo;
+  animation: bounce 1s ease-in-out alternate;
+}
+.animation-revers {
+  background-color: darkslateblue;
+  animation: bounce 10 ease-in-out reverse;
+}
+.animation-paused {
+  background-color: mediumaquamarine;
+  animation: bounce2 2s linear infinite;
+}
+.animation-paused:hover {
+  animation-play-state: paused;
+}
+.perspective-container {
+  perspective: 600px;
+}
+.perspective-container .box {
+  transform-style: preserve-3d;
+}
+.perspective-container .box .hover {
+  transform: rotateY("180deg");
+}
