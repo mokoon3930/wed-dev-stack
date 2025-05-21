@@ -1,3 +1,6 @@
+section {
+  display: flex;
+}
 .box {
   width: 150px;
   height: 150px;
@@ -10,15 +13,16 @@
   margin: auto;
 }
 .transition {
-  background-color: cornflowerblue;
-  /*transition: all 10s*/
-  /*transition-property:  backgroud-color; font-size*/
-  /*proprety : 속성명시 duartion : 전환시간 timing-function : 전환속도 곡선
-   delay 전환 시간 지연 시간*/
+  background-color: cadetblue;
+  /* transition: all 10s; */
+  /* transition-property: background-color, font-size; */
+  /* property : 속성 명시, duration : 전환 시간, 
+    timing-function : 전환 속도 곡선, delay : 전환 시간 지연 시간 */
   transition-property: all;
-  transition-duration: 2s;
-  transition-timing-function: linear;
-  transition-delay: all 2s ease-in-out;
+  transition-duration: 5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 1s;
+  transition: all 2s ease-in-out;
 }
 .transition:hover {
   background-color: coral;
@@ -26,43 +30,50 @@
   transform: scale(1.5) rotate(15deg);
   border-radius: 50%;
 }
-/*transfrom*/
-.transfrom {
+/* transform */
+.transform-scale {
   background: coral;
+  
 }
-.transfrom-rotate {
+.transform-scale:hover {
+  /* scale : 크기 확대 */
+  transform: scale(1.2);
+}
+.transform-rotate {
   background: orange;
 }
-.transfrom-rotate:hover {
+.transform-rotate:hover {
+  /* rotate : 회전 */
   transform: rotate(45deg);
 }
 .transform-translate {
   background: mediumaquamarine;
 }
-/*translate : 이동 (x,y)*/
 .transform-translate:hover {
-  transform: (40px, 20px);
+  /* translate : 이동(x, y) */
+  transform: translate(40px, 20px);
 }
-/*skew :  기울이기*/
 .transform-skew {
   background-color: dodgerblue;
 }
 .transform-skew:hover {
+  /* skew : 기울이기 */
   transform: skew(10deg, 20deg);
 }
-/*animation*/
+/* animation */
 @keyframes bounce {
   0% {
     transform: translate(0);
   }
   50% {
-    transform: translate(1.5);
+    transform: scale(1.5);
   }
   100% {
     transform: translate(25px, 50px);
   }
 }
 @keyframes bounce2 {
+  0%,
   100% {
     transform: translate(0);
   }
@@ -70,18 +81,19 @@
     transform: translateY(-30px);
   }
 }
+
 .animation-once {
   background-color: crimson;
-  /*animation: 애니메이션명 지속시간 속도곡선 횟수*/
-  animation: bounce 1s ease-in-out 1;
+  /* animation: 애니메이션명 지속시간 속도곡선 횟수 */
+  animation: bounce 2s ease-in-out 1;
 }
 .animation-alternate {
-  background: indigo;
+  background-color: indigo;
   animation: bounce 1s ease-in-out alternate;
 }
-.animation-revers {
+.animation-reverse {
   background-color: darkslateblue;
-  animation: bounce 10 ease-in-out reverse;
+  animation: bounce 10s ease-in-out reverse;
 }
 .animation-paused {
   background-color: mediumaquamarine;
@@ -94,9 +106,9 @@
   perspective: 600px;
 }
 .perspective-container .box {
-  transition: transfrom 1s;
+  transition: transform 1s;
   transform-style: preserve-3d;
 }
-.perspective-container .box .hover {
-  transform: rotateY("180deg");
+.perspective-container .box:hover {
+  transform: rotateY(180deg);
 }

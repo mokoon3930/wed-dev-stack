@@ -138,7 +138,7 @@
 }
 /*position*/
 #outer {
-  padding: relative;
+  position: relative;
   width: 400px;
   height: 200px;
   background: #f4f4f4;

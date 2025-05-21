@@ -1,9 +1,10 @@
 .container {
   /*container에 display:flex*/
+  display: flex;
   background: #f0f0f0;
   padding: 1rem;
   border: 1px solid #ccc;
-  display: flex;
+  
 }
 .tall {
   height: 300px;
@@ -40,6 +41,7 @@
   /* space-evenly 동일 간격*/
   justify-content: space-evenly;
 }
+#jc-2{justify-content: space-between;}
 /*align-items*/
 #ai {
   /*stretch 높이 자동 확장*/
