@@ -94,6 +94,7 @@
   perspective: 600px;
 }
 .perspective-container .box {
+  transition: transfrom 1s;
   transform-style: preserve-3d;
 }
 .perspective-container .box .hover {
