@@ -33,7 +33,6 @@ section {
 /* transform */
 .transform-scale {
   background: coral;
-  
 }
 .transform-scale:hover {
   /* scale : 크기 확대 */
