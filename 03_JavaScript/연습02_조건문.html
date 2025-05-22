@@ -39,7 +39,11 @@
           // Q3: 여기에 코드를 작성하세요
           const a = 10;
           const b = 20;
-          const c = 15;
+          const c = prompt()
+          if (c >= 10 && c <= 20) {
+            console.log("정수")
+          }
+          
         </script>
       </li>
 
@@ -62,6 +66,16 @@
         겨울)
         <script>
           // Q5: 여기에 코드를 작성하세요
+          const month = prompt()
+          if (month >= 3 && month <= 5){
+            console.log("봄")
+          } else if (month >= 6 && month <= 8){
+            console.log("여름")
+          } else if (month >= 9 && month <= 11){
+            console.log("가을")
+          } else if (month === 12 && month === 1 && month ===2){
+            console.log("겨울")
+          } 
         </script>
       </li>
 
@@ -122,12 +136,31 @@
         로그인 정보(id/pw)를 비교하여 로그인 성공 여부를 출력하시오.
         <script>
           // Q9: 여기에 코드를 작성하세요
+          const ID = "abc"
+          const PW = "dfg"
+
+          if (ID === "abc" && PW === "dfg"){
+            console.log("로그인 성공")
+          }else if (ID !== "abc"){
+            console.log("아이디 오류")
+          }else if (ID === "abc" && PW !== "dfg"){
+            console.log("패스워드 오류")
+          }
         </script>
       </li>
       <li>
         3개의 수 중 가장 큰 수를 출력하시오.
         <script>
           // Q10: 여기에 코드를 작성하세요
+          const num1 = 50
+          const num2 = 30
+          const num3 = 10
+          if (num1 < num2){
+           console.log ("num1 이 num2 보다 크다")
+          }else if (num2 < num3){
+            console.log("num2 가 num3 보다 크다")
+          }else {console.log("가장 큰 수는 num1 이다")}
+
         </script>
       </li>
 
@@ -136,6 +169,16 @@
         아닌지 판별하시오.
         <script>
           // Q11: 여기에 코드를 작성하세요
+          const N=18
+          if ( N % 3 === 0 && N % 5 === 0){
+            console.log("N 은 3의 배수 5의 배수 둘 다이다")
+          }else if ( N % 3 === 0 && N % 5 !== 0){
+            console.log("N 은 3의 배수이다")
+          }else if ( N % 3 !== 0 && N % 5 === 0){
+            console.log("N 은 5의 배수이다")
+          }else if ( N % 3 !== 0 && N % 5 !== 0){
+            console.log("N 은 어던것도 아니다")
+          }
         </script>
       </li>
 
@@ -143,6 +186,10 @@
         점수가 0~100 사이인지 아닌지 판별하시오.
         <script>
           // Q12: 여기에 코드를 작성하세요
+          const S = 101
+          if (S >= 0 && S <= 100){
+            console.log("0~100점 사이이다")
+          }else {console.log("0~100점 사이가 아니다")}
         </script>
       </li>
 
@@ -150,6 +197,10 @@
         4자리 정수가 주어졌을 때, 첫 번째 자리수가 짝수인지 홀수인지 판별하시오.
         <script>
           // Q13: 여기에 코드를 작성하세요
+          /*const T = Number("abcd");
+          if (T % 2 === 0){
+            console.log("첫번쨰 자리 a는 짝수이다")
+          }else {"첫번쨰 자리 a는 홀수이다"}*/
         </script>
       </li>
     </ol>
