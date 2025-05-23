@@ -6,15 +6,22 @@
     <title>변수 & 연산자 연습문제</title>
   </head>
   <body>
+    <!-- 변수 명명 규칙
+          1) 문자, 숫자,기호는 $, _만 사용
+          2) 첫글자에는 숫자 금지
+          3) 예약어 (const, if, switch...)금지
+          4) 표기법대로 사용 - camelCase(낙타 표기법) userId (중간에 대문자)
+          5) 상수(const로 표시한 것 X)는 대문자 + SNAKE_case(언더바 표기법)
+          -->
     <h1>변수 & 연산자 연습문제</h1>
     <ol style="line-height: 2">
       <li>
         킬로그램(kg)을 파운드(lb)로 환산하여 console에 출력하시오. (1kg = 2.2lb)
         <script>
           const kg = 60;
-          const lb = 2.2;
+          const lb = kg * 2.2;
           // Q1: 여기에 코드를 작성하세요
-          console.log(kg * lb, "lb 입니다");
+          console.log(lb, "lb 입니다");
         </script>
       </li>
 
@@ -22,10 +29,10 @@
         제곱미터(㎡)를 평(평수)으로 환산하여 출력하시오. (1㎡ = 0.3평)
         <script>
           const m2 = 99;
-          const m3 = 0.3;
+          const py = m2 * 0.3;
 
           // Q2: 여기에 코드를 작성하세요
-          console.log(m2 * m3, "평 입니다");
+          console.log(py, "평 입니다");
         </script>
       </li>
 
@@ -35,8 +42,9 @@
           const upper = 10;
           const lower = 14;
           const height = 4;
+          const area = ((upper + lower) / 2) * height;
           // Q3: 여기에 코드를 작성하세요
-          console.log(((upper + lower) / 2) * height);
+          console.log(area);
         </script>
       </li>
 
@@ -45,9 +53,9 @@
         <script>
           const won = 12000000;
           const p = 0.04;
-          const year = 12;
+          const month = (won * p) / 12;
           // Q4: 여기에 코드를 작성하세요
-          console.log((won * p) / year, "월 이자 입니다");
+          console.log(month, "월 이자 입니다");
         </script>
       </li>
 
@@ -56,8 +64,9 @@
         <script>
           const y = 2025;
           const age = 55;
+          const bone = y - age;
           // Q5: 여기에 코드를 작성하세요
-          console.log(y - age, "년생 입니다");
+          console.log(bone, "년생 입니다");
         </script>
       </li>
 
@@ -67,12 +76,10 @@
         <script>
           const ia = 5500;
           const m = 15000;
-          const c = m / ia;
-          const money1 = m - ia * parseInt(c);
-          const cup = "잔 ";
-          const money2 = "원 거스름돈 입니다";
+          const c = parseInt(m / ia);
+          const change = m % ia;
+          console.log(`${c}잔, 잔돈 ${change}원`);
           // Q6: 여기에 코드를 작성하세요
-          console.log(parseInt(c), cup + money1 + money2);
         </script>
       </li>
 
@@ -80,41 +87,38 @@
         양꼬치 1인분 12,000원, 음료수 2,000원. 양꼬치 64인분, 음료 6개.
         10인분마다 음료 1개 서비스. 총 지불 금액?
         <script>
-          const y1 = 12000;
-          const d = 2000;
-          const c1 = y1 * 10 || -d;
-          const money3 = "원 입니다";
-
           // Q7: 여기에 코드를 작성하세요
-          console.log(y1 * 64 + d * 6 - c1 + money3);
+          const food = 12000;
+          const drink = 2000;
+          const foodNumber = 64;
+          const drinhNumber = 6;
+          const service = parseInt(foodNumber / 10); // 6
+          const total = food * foodNumber + drink * (drinhNumber - service);
+          console.log(total);
         </script>
       </li>
 
       <li>
         두 자리 정수(예: 73)의 각 자릿수를 더한 값을 구하시오. (7 + 3 = 10)
         <script>
-          const f = perseInt(7);
-          const s = perseInt(3);
-
           // Q8: 여기에 코드를 작성하세요
-          console.log(f + s);
+          const number = 73;
+          const ten = parseInt(number / 10);
+          const one = number % 10;
+          const sum = ten + one;
+          console.log(sum);
         </script>
       </li>
 
       <li>
         이름, 나이, 취미를 변수로 저장한 후 소개 문장을 console에 출력하시오.
         <script>
-          const name = "이름";
-          const age1 = "나이";
-          const hobby = "취미";
+          const name = "강성모";
+          const age1 = "28";
+          const hobby = "유튜브";
           // Q9: 여기에 코드를 작성하세요
           console.log(
-            name +
-              "은 강성모 입니다\n" +
-              age1 +
-              "28 입니다\n" +
-              hobby +
-              "는 유튜브 입니다."
+            `저는 ${name}이고, 나이는 ${age1}, 취미는 ${hobby}입니다.`
           );
         </script>
       </li>
