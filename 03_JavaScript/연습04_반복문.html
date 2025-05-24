@@ -33,6 +33,7 @@
         1부터 사용자에게 입력받은 숫자까지의 합을 출력하시오. (prompt 사용)
         <script>
           // Q3
+        
         </script>
       </li>
 
@@ -49,12 +50,15 @@
       <li>
         주어진 숫자 배열에서 짝수만 출력하는 반복문을 작성하시오.
         <script>
-          const numbers = [12, 7, 9, 20, 33, 16];
+          const numbers = [12, 7, 9, 20, 33, 16]
           // Q5
-          for (numbers of i) {
-            if (i % 2 === 0);
-            console.log(i);
+          for (let i = 0; i < numbers.length; i++ ){
+            if (numbers[i] % 2 === 0){
+              console.log(numbers[i])};
           }
+          
+          
+        
         </script>
       </li>
 
@@ -63,6 +67,8 @@
         <script>
           const words = ["오므라이스", "라면", "불고기", "된장찌개", "김밥"];
           // Q6
+         
+
         </script>
       </li>
 
@@ -71,6 +77,9 @@
         <script>
           const nums = [3, 45, 21, 99, 18, 77];
           // Q7
+          nums.sort((a, b) => a - b);
+          nums.splice(0, 5);
+          console.log(nums[nums.indexOf(99)]);
         </script>
       </li>
 
@@ -79,7 +88,14 @@
         멈추도록 구현하시오.
         <script>
           // Q8
+          for (let i = 1; i < 10; i++) {
+        if (i % 2 == 1) console.log(i);
+        if (i % 2 == 0) continue;
+        if (i === 7) break;
+        console.log(i);
+      }
         </script>
+
       </li>
 
       <li>
@@ -91,7 +107,14 @@
         - 정답을 맞추면 시도 횟수와 함께 종료 메시지를 출력하시오.
         <script>
           const target = Math.floor(Math.random() * 100) + 1; // 1~100 랜덤 숫자
-          console.log(target);
+          while(1){
+            const input = prompt ("1~100까지 숫자중 1개를 입력하시오");
+            if (input === target) break;
+            if (input > target);
+            if (input < target);
+            console.log("종료")
+          }
+          
         </script>
       </li>
     </ol>
