@@ -1,0 +1,23 @@
+body {
+  height: 100vh;
+  /*아래 3개 텍스처를 정 가운데 위치*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*정중앙 시키고 방향이 이상할때 방향전환*/
+  flex-direction: column;
+}
+#now {
+  font-size: 3rem;
+  padding-bottom: 5%;
+}
+#time {
+  font-size: 3.5rem;
+  padding-bottom: 5%;
+}
+#last {
+  font-size: 3rem;
+}
+#anser {
+  font-size: 3rem;
+}
