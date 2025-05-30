@@ -3,123 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>실습07_회원가입</title>
-    <link rel="stylesheet" href="실습07_회원가입.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="실습07_회원가입2.css" />
   </head>
   <body>
     <h1>회원가입</h1>
-
     <form action="">
-      <input class="text" id="Id" placeholder="아이디를 알려주세요" />
-      <p id="result1">영문자로 시작하고영문자와 숫자 조합으로 4~12자 이내</p>
-      <script>
-        Id.addEventListener("input", (e) => {
-          let Id = /^[a-zA-Z][a-zA-Z0-9]{3,11}$/;
-          if (Id.test(e.target.value)) {
-            console.log("아이디 맞음");
-            result1.innerHTML = "ok";
-            result1.style.color = "green";
-          } else {
-            console.log("아이디가 아닙니다");
-            result1.innerHTML = "no";
-            result1.style.color = "red";
-          }
-        });
-      </script>
-      <input class="text" id="Pw" placeholder="비밀번호를 입력해주세요" />
-      <p id="result2">영문자,숫자,특수문자 조합으로 8~15자 이내</p>
-      <script>
-        Id.addEventListener("input", (e) => {
-          let Pw =
-            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,15}$/;
-          if (Pw.test(e.target.value)) {
-            console.log("비밀번호가 맞습니다");
-            result2.innerHTML = "ok";
-            result2.style.color = "green";
-          } else {
-            console.log("비밀번호가 아닙니다");
-            result2.innerHTML = "no";
-            result2.style.color = "red";
-          }
-        });
-      </script>
-      <input
-        class="text"
-        id="Pw2"
-        placeholder="비밀번호를 다시한번 입력해주세요"
-      />
-      <p id="result3">위 비밀번호와 동일하게</p>
-      <script>
-        Id.addEventListener("input", (e) => {
-          let Pw2 =
-            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,15}$/;
-          if (Pw2.test(e.target.value)) {
-            console.log("비밀번호가 일치합니다");
-            result3.innerHTML = "ok";
-            result3.style.color = "green";
-          } else {
-            console.log("비밀번호가 일치 하지않습니다");
-            result3.innerHTML = "no";
-            result3.style.color = "red";
-          }
-        });
-      </script>
-
-      <input class="text" id="name" placeholder="이름을 입력해주세요" />
-      <p id="result4">한글 2자 이상</p>
-      <script>
-        Id.addEventListener("input", (e) => {
-          let name = /^[가-힣]{2,}$/;
-          if (name.test(e.target.value)) {
-            console.log("이름이 맞습니다");
-            result4.innerHTML = "ok";
-            result4.style.color = "green";
-          } else {
-            console.log("이름이 아닙니다");
-            result4.innerHTML = "no";
-            result4.style.color = "red";
-          }
-        });
-      </script>
-
-      <input class="text" id="Email" placeholder="이메일을 입력해주세요" />
-      <p id="result5">이메일 형식</p>
-      <script>
-        Id.addEventListener("input", (e) => {
-          let Email = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/;
-          if (Email.test(e.target.value)) {
-            console.log("이메일이 맞습니다");
-            result5.innerHTML = "ok";
-            result5.style.color = "green";
-          } else {
-            console.log("이메일이 아닙니다");
-            result5.innerHTML = "no";
-            result5.style.color = "red";
-          }
-        });
-      </script>
-
-      <input class="text" id="Tel" placeholder="전화번호를 입력해주세요" />
-      <p id="result6">전화번호</p>
-      <script>
-        Id.addEventListener("input", (e) => {
-          let Tel = /^010-\d{4}-\d{4}$/;
-          if (Tel.test(e.target.value)) {
-            console.log("전화번호가 맞습니다");
-            result6.innerHTML = "ok";
-            result6.style.color = "green";
-          } else {
-            console.log("전화번호가 아닙니다");
-            result6.innerHTML = "no";
-            result6.style.color = "red";
-          }
-        });
-      </script>
       <div>
-        <button id="click">회원가입</button>
-        <button>취소</button>
+        <input type="text" id="userId" placeholder="아이디를 입력해주세요" />
+        <span>영문자로 시작하고 영문자와 숫자 조합으로 4~12자 이내</span>
+      </div>
+      <div>
+        <input
+          type="text"
+          id="password"
+          placeholder="비밀번호를 입력해주세요"
+        />
+        <span>영문자, 숫자, 특수문자 조합으로 8~15자 이내</span>
+      </div>
+      <div>
+        <input
+          type="text"
+          id="passwordCheck"
+          placeholder="비밀번호를 다시 한 번 입력해주세요"
+        />
+        <span>위 비밀번호와 동일하게</span>
+      </div>
+      <div>
+        <input type="text" id="userName" placeholder="이름을 입력해주세요" />
+        <span>한글 2자 이상</span>
+      </div>
+      <div>
+        <input type="text" id="email" placeholder="이메일을 입력해주세요" />
+        <span>이메일 형식</span>
+      </div>
+      <div>
+        <input type="text" id="phone" placeholder="전화번호를 입력해주세요" />
+        <span>전화번호 형식</span>
+      </div>
+      <div class="button">
+        <button type="submit" id="signup" disabled>회원가입</button>
+        <button type="reset" id="cancel">취소</button>
       </div>
     </form>
-    <script src="실습07_회원가입.js"></script>
+    <script src="실습07_회원가입2 (1).js"></script>
   </body>
 </html>

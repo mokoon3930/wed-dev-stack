@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
     hover.style.background = "lightblue";
     hover.textContent = "Mouse Enter!";
   });
+
   hover.addEventListener("mouseleave", () => {
     console.log("mouseleave!");
     // 배경색상은 navy, 텍스트는 Mouse Leave! 변경
