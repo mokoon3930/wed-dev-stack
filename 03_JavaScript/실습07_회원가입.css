@@ -1,45 +1,45 @@
-body {
+h1 {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
 }
-form {
+form,
+#form {
+  border: 1px solid;
+  padding: 10px;
   width: 70%;
+  margin: auto;
+}
+div {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 30px 20px 40px 10px;
 }
-.text {
-  display: flex;
-  background: #ffffff;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-p {
-  color: #ccc;
-}
-
 input {
-  width: 70%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid;
+  margin: 5px;
 }
-p {
-  width: 70%;
-  text-align: left;
+form span {
+  margin: 0px 5px 5px;
+}
+form .button {
+  flex-direction: row;
+  justify-content: center;
 }
 button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  background: lightseagreen;
   color: white;
-  font-size: 20px;
-  border: 1px solid rgb(0, 0, 0, 0);
-  border-radius: 10%;
 }
-button:last-child {
-  background-color: rgb(25, 148, 148);
+form .button button:disabled {
+  background: lightgray;
+}
+#logout {
+  display: block;
+  margin: auto;
 }
