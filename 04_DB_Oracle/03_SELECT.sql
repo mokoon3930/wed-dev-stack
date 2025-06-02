@@ -110,7 +110,7 @@ WHERE AGE > 30;
 --EMPLOYEE에서 부서코드(DEPT_CODE)가 'D9' 인 사원들 (모든 컬럼) 조회
 SELECT * 
 FROM EMPLOYEE
-WHERE DEPT_CODE = 'D9'
+WHERE DEPT_CODE = 'D9';
 
 
 
