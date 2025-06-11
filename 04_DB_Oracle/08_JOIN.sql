@@ -253,21 +253,30 @@ FROM EMPLOYEE
     JOIN JOB USING (JOB_CODE)
     LEFT JOIN SAL_GRADE ON (SALARY BETWEEN MIN_SAL AND MAX_SAL);
 
--- 7. 보너스를 받지 않는 직원들 중 직급 코드가 J4 또는 J7인 직원들의 직원명, 직급명, 급여 조회
+-- 7. 보너스를 받지 않는 직원들 중 직급 코드가 J4 또는 J7인 직원들의 직원명, 직급명, 급여 조회 1010101010
+SELECT JOB_CODE, EMP_NAME, JOB_NAME, SALARY, BONUS
+FROM EMPLOYEE
+    JOIN JOB USING (JOB_CODE)
+WHERE BONUS IS NULL;
 
 -- 8. 부서가 있는 직원들의 직원명, 직급명, 부서명, 근무 지역 조회
+SELECT EMP_NAME, JOB_NAME, DEPT_TITLE, LOCATION_ID
+FROM EMPLOYEE
+    JOIN JOB USING (JOB_CODE)
+    JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID);
 
 -- 9. 해외영업팀에 근무하는 직원들의 직원명, 직급명, 부서코드, 부서명 조회
 
 -- 10. 이름에 '형'자가 들어있는 직원들의 사번, 직원명, 직급명 조회
 
 -- 테이블 : USER_INFO, REVIEW, MOVIE, ACTOR, MOVIE_ACTOR
--- 11. 영화 제목, 감독, 출연한 배우 조회
 SELECT * FROM USER_INFO;
 SELECT * FROM REVIEW;
 SELECT * FROM MOVIE;
 SELECT * FROM ACTOR;
 SELECT * FROM MOVIE_ACTOR;
+-- 11. 영화 제목, 감독, 출연한 배우 조회
+
 -- 12. 평점이 3점 이상인 리뷰 영화 제목과 이름, 평점 조회
 
 -- 13. 사용자별 리뷰 수 조회
@@ -277,10 +286,25 @@ SELECT * FROM MOVIE_ACTOR;
 -- 15. 하정우가 출연한 영화 제목과 평균 평점 조회
 
 -- 16. MBTI별 평균 평점 조회
+SELECT MBTI, ROUND(AVG(RATING), 2)
+FROM REVIEW
+    JOIN USER_INFO USING(USER_ID)
+GROUP BY MBTI;
 
 -- 17. 각 영화별 리뷰 수와 평균 평점 조회 (리뷰 수가 1건이라도 있는 경우부터)
+SELECT TITLE, COUNT("COMMENT"), AVG(RATING)
+FROM REVIEW
+    JOIN MOVIE USING (MOVIE_ID)
+GROUP BY TITLE
+HAVING COUNT("COMMENT") >= 1;
 
 -- 18. 각 배우가 출연한 영화 수 조회 (단, 3편 이상인 배우만)
+SELECT NAME, COUNT(MOVIE_ID)
+FROM MOVIE_ACTOR
+    JOIN MOVIE USING(MOVIE_ID)
+    JOIN ACTOR USING(ACTOR_ID)
+GROUP BY NAME
+HAVING COUNT (MOVIE_ID) >= 3;
 
 
 
