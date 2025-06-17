@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class VariablePractice {
 	
 	Scanner sc = new Scanner(System.in);
+	private Scanner scanner;
 	
 	public static void main(String[] args) {
 		VariablePractice v = new VariablePractice();
@@ -25,9 +26,10 @@ public class VariablePractice {
 	 * 성인 2명과 청소년 3명이 영화를 보려고 할 때 지불해야 할 금액을 계산 후 출력하세요.
 	 * */
 	public void method1() {
-		int iNum1 = 10000;
-		int iNum2 = 7000;
-		System.out.println(iNum1 * 2 + iNum2 * 3);
+		int a = 10000;
+		int s = 7000;
+		
+		System.out.println(a * 2 + s * 3);
 	}
 	
 	/*
@@ -45,11 +47,10 @@ public class VariablePractice {
 		int z = 9;
 		
 		// 코드 적어주세요!
-		System.out.printf("%d = x\n", x);
-		System.out.printf("%d = y\n", y);
-		System.out.printf("%d = z\n", z);
+		System.out.printf("x = %d\n", y);
+		System.out.printf("y = %d\n", z);
+		System.out.printf("z = %d\n", x);
 	}
-	
 	
 
 	/*
@@ -63,15 +64,23 @@ public class VariablePractice {
 	 * 나누기 몫 : 3
 	 * */
 	public void method3() {
-		System.out.print("첫번째 정수 : >");
-		int iNum3 = sc.nextInt();
-		System.out.print("두번째 정수 : >");
-		int iNum4 = sc.nextInt();
+		this.scanner = new Scanner(System.in);
+		System.out.print("첫 번쨰 정수 : ");
+		int f = scanner.nextInt();
+		System.out.print("두 번쨰 정수 : ");
+		int s = scanner.nextInt();
 		
-		System.out.println("더하기 : " + iNum3 + iNum4);
-		System.out.println("빼기 : " + iNum3 - iNum4);
-		System.out.println("곱하기 : " + iNum3 * iNum4);
-		System.out.println("나누기 : " + iNum3 / iNum4);
+		int P = (f + s);
+		int M = (f - s);
+		int X = (f * s);
+		int D = (f / s);
+		
+		
+		System.out.printf("더하기 : %d\n", P);
+		System.out.printf("빼기 : %d\n", M);
+		System.out.printf("곱하기 : %d\n", X);
+		System.out.printf("나누기 몫 : %d\n", D);
+		
 		
 		
 		
@@ -88,13 +97,16 @@ public class VariablePractice {
 	 * 둘레 : 110.4
 	 * */
 	public void method4() {
-		System.out.print("가로 : >");
-		int iNum5 = (int) sc.nextFloat();
-		System.out.print("세로 : >");
-		int iNum6 = (int) sc.nextFloat();
+		System.out.print("가로: ");
+		double W = scanner.nextDouble();
+		System.out.print("세로: ");
+		double H = scanner.nextDouble();
 		
-		System.out.println("면적 : " + iNum5 * iNum6);
-		System.out.println("둘레 : " + (iNum5 + iNum6) * 2);
+		double A = W * H;
+		double P = (W + H) * 2;
+		
+		System.out.printf("면적 : %.2f\n", A);
+		System.out.printf("둘레 : %.1f\n", P);
 	}
 
 	/*
@@ -106,7 +118,15 @@ public class VariablePractice {
 	 * 마지막 문자 : e
 	 * */
 	public void method5() {
-
+		this.scanner = new Scanner(System.in);
+		System.out.print("첫번쨰 문자: ");
+		String A1 = scanner.next();
+		System.out.print("두번쨰 문자: ");
+		String A2 = scanner.next();
+		System.out.print("마지막 문자: ");
+		String A3 = scanner.next();
+		
+		System.out.printf("%s%s%sl%s", A1, A1, A2, A3);
 	}
 
 	/*
@@ -117,7 +137,7 @@ public class VariablePractice {
 	 * B unicode : 66
 	 * */
 	public void method6() {
-
+		
 	}
 	
 	/*
@@ -130,7 +150,19 @@ public class VariablePractice {
 	 * 평균 : 72.67
 	 * */
 	public void method7() {
-
+		this.scanner = new Scanner(System.in);
+		System.out.print("국어 : ");
+		int i1 = scanner.nextInt();
+		System.out.print("영어 : ");
+		int i2 = scanner.nextInt();
+		System.out.print("수학 : ");
+		int i3 = scanner.nextInt();
+		
+		int S1 = (i1 + i2 + i3);
+		double M1 = (S1 / 3);
+		
+		System.out.printf("총점 : %d\n", S1);
+		System.out.printf("평균 : %.3f\n", M1);
 	}
 
 }
