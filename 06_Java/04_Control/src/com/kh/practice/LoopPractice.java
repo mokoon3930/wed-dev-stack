@@ -56,7 +56,7 @@ class LoopPractice {
 
         문자열 : banana
         문자 : a
-        banana 안에 포함된 a 개수 : 3
+        banana 안에 포함된 a 개수 : 3 
 
     */
     public void method3() {
