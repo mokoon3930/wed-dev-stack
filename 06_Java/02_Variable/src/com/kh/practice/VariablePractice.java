@@ -9,12 +9,12 @@ public class VariablePractice {
 	
 	public static void main(String[] args) {
 		VariablePractice v = new VariablePractice();
-		v.method1();
-		v.method2();
-		v.method3();
-		v.method4();
-		v.method5();
-		v.method6();
+		//v.method1();
+		//v.method2();
+		//v.method3();
+		//v.method4();
+		//v.method5();
+		//v.method6();
 		v.method7();
 	}
 	
@@ -28,8 +28,10 @@ public class VariablePractice {
 	public void method1() {
 		int a = 10000;
 		int s = 7000;
+		int A = 2;
+		int S = 3;
 		
-		System.out.println(a * 2 + s * 3);
+		System.out.println(a * A + s * S);
 	}
 	
 	/*
@@ -67,6 +69,7 @@ public class VariablePractice {
 		this.scanner = new Scanner(System.in);
 		System.out.print("첫 번쨰 정수 : ");
 		int f = scanner.nextInt();
+		//int f = Integer.parseInt(sc.nextLine())
 		System.out.print("두 번쨰 정수 : ");
 		int s = scanner.nextInt();
 		
@@ -81,7 +84,7 @@ public class VariablePractice {
 		System.out.printf("곱하기 : %d\n", X);
 		System.out.printf("나누기 몫 : %d\n", D);
 		
-		
+		// 정렬 같은경우는 내가 정렬 하고자 하는 부분 선택하시고 ctrl +shift + F
 		
 		
 	}
@@ -98,7 +101,8 @@ public class VariablePractice {
 	 * */
 	public void method4() {
 		System.out.print("가로: ");
-		double W = scanner.nextDouble();
+		double W = sc.nextDouble();
+		//double W = double.parseDouble(sc.nextLine())
 		System.out.print("세로: ");
 		double H = scanner.nextDouble();
 		
@@ -107,6 +111,7 @@ public class VariablePractice {
 		
 		System.out.printf("면적 : %.2f\n", A);
 		System.out.printf("둘레 : %.1f\n", P);
+		//System.out.println("둘레 : " + String.format("%.1f", P));
 	}
 
 	/*
@@ -119,14 +124,12 @@ public class VariablePractice {
 	 * */
 	public void method5() {
 		this.scanner = new Scanner(System.in);
-		System.out.print("첫번쨰 문자: ");
-		String A1 = scanner.next();
-		System.out.print("두번쨰 문자: ");
-		String A2 = scanner.next();
-		System.out.print("마지막 문자: ");
-		String A3 = scanner.next();
+		System.out.print("문자열을 문자: ");
+		String W = sc.nextLine();
+		System.out.println(W.charAt(0));
+		System.out.println(W.charAt(1));
+		System.out.println(W.charAt(W.length()-1));
 		
-		System.out.printf("%s%s%sl%s", A1, A1, A2, A3);
 	}
 
 	/*
@@ -137,7 +140,14 @@ public class VariablePractice {
 	 * B unicode : 66
 	 * */
 	public void method6() {
+		// System.out.print("문자 :");
+		// char word = sc.nextLine().charAt(0); - 이것도 가능
+		// int num = word;
+		//System.out.println(word + "unicode : " + num );
+		//System.out.println((char)(num + 1) + "unicode :" + (num + 1));
 		
+		System.out.println("A unicode :" + (int)'A');
+		System.out.println("B unicode :" + ((int)'A' + 1));
 	}
 	
 	/*
@@ -162,7 +172,9 @@ public class VariablePractice {
 		double M1 = (S1 / 3);
 		
 		System.out.printf("총점 : %d\n", S1);
-		System.out.printf("평균 : %.3f\n", M1);
+		//System.out.println("총점 : " + S1);
+		
+		 System.out.printf("평균 : %.2f", ((double)S1 / 3));
 	}
 
 }

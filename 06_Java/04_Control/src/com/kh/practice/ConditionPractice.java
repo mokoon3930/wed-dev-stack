@@ -128,7 +128,7 @@ public class ConditionPractice {
 
      */
     public void method7() {
-
+    	
 
     }
 
