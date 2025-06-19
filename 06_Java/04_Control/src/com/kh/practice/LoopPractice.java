@@ -2,6 +2,7 @@ package com.kh.practice;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 class LoopPractice {
 	
@@ -11,8 +12,8 @@ class LoopPractice {
 
 		LoopPractice l = new LoopPractice();
 		//l.method1();
-		l.method2();
-		l.method3();
+		//l.method2();
+		//l.method3();
 		l.method4();
 		l.method5();
 		l.method6();
@@ -42,24 +43,19 @@ class LoopPractice {
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
     public void method2() {
     	int i = 1;
+    	int num = 0;
     	
-    	//int a = (i*2)+ -i;
-    	//int b = - i + - i;
-    	//int c = a + b;
-    	
-		for (i = 1; i > 0; i++) {
-			if (i % 2 == 0 && i < 100) {
-				System.out.println(-i);
-			}
-			else if(i % 2 != 0 && i < 100) {
-				System.out.println(i);
-			}
-			else System.out.println(i + -i);
-			
-
-		}
-		
+    	while(num < 100) {
+    		if(i % 2 == 0) {
+    			num -= i;
+    		}else {
+    			num += i;
+    		}
+    		i++;
+    	}
+    	System.out.println(i - 1);
     }
+
 
     /*
         사용자로부터 문자열을 입력 받고 문자열에서 검색될 문자를 입력 받아 해당 문자열에 그 문자가 몇 개 있는지 개수를 출력하세요. 
@@ -70,7 +66,19 @@ class LoopPractice {
 
     */
     public void method3() {
-
+    	System.out.println("문자를 입력하시오 : "); 
+		String STR = sc.nextLine();
+		
+		System.out.println("검색문자 : ");
+		char ch = sc.nextLine().charAt(0); // 검색 문자 인덱스 찼기
+		
+		 int count = 0; // 검색 문자 카운트
+		for(int i = 1; i < STR.length(); i++) {
+			if (STR.charAt(i) == ch) {
+				count++;
+			}
+		}
+		System.out.println(ch + "개수 : " + count);
     }
 
     /*
@@ -84,8 +92,19 @@ class LoopPractice {
         0
      */
     public void method4() {
-
+    	/*int [] nums = {0, 7, 3, 4, 2, 3, 4, 0};
+    	
+    	while (true) {
+    		int [] random = {(int) (Math.random() * 10 + 0)};
+    		if (random.length == nums.length) {
+ 
+    		}
+    	}
+    	*/
+    	
     }
+    	
+    
 
     /*
         주사위를 10번 굴렸을 때 각 눈의 수가 몇 번 나왔는지 출력하세요. (random 사용!)
@@ -99,9 +118,10 @@ class LoopPractice {
 
      */
     public void method5() {
+    	// int random = (int) (Math.random() * 6 + 1);
+    	
     	
     }
-
     /*
         사용자의 이름을 입력하고 컴퓨터와 가위바위보를 하세요. 
         컴퓨터가 가위인지 보인지 주먹인지는 랜덤한 수를 통해서 결정하도록 하고, 사용자에게는 직접 가위바위보를 받으세요.
