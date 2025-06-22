@@ -219,154 +219,158 @@ class LoopPractice {
     	/*int win = 0;
     	int lose = 0;
     	int draw = 0;
-    	System.out.println("당신의 이름을 입력해주세요 : ");
+    	
+    	System.out.print("당신의 이름을 입력해주세요 : ");
     	String name = sc.nextLine();
     	
     	while(true) {
-    		System.out.println("가위 바위 보 : "); // 가위바위보 : 보
+    		System.out.print("가위바위보 : ");
     		String input = sc.nextLine();
     		
     		// 컴퓨터 - 0 : 가위, 1 : 바위, 2 : 보
-    		int computer = (int)(Math.random() * 3); 
+    		int computer = (int)(Math.random() * 3);
     		String computerName = "";
     		switch(computer) {
-    		case 0:
-    			computerName = "가위";
-    			break;
-    		case 1:
-    			computerName = "바위";
-    			break;
-    		case 2:
-    			computerName = "보";
-    			break;
+	    		case 0:
+	    			computerName = "가위";
+	    			break;
+	    		case 1:
+	    			computerName = "바위";
+	    			break;
+	    		case 2:
+	    			computerName = "보";
+	    			break;
     		}
-    		System.out.println("컴퓨터 : " + computerName); // 컴퓨터 : 바위
-    		System.out.println(name + " : " + input); // 김미경 : 보
+    		System.out.println("컴퓨터 : " + computerName);
+    		System.out.println(name + " : " + input);
     		
     		
-    		if(input.equals(computerName)) { // 비겻을 경우
+    		if(input.equals(computerName)) { // 비겼을 경우
     			System.out.println("비겼습니다.");
     			draw++;
-    		} else if(input.equals("가위") && computerName.equals("보")
-    					|| input.equals("바위") && computerName.equals("가위")
-    					|| input.equals("보") && computerName.equals("바위")) { // 이겻을 경우
-    			System.out.println("이겻습니다"); win++;
-    			System.out.println("비긴횟수 : " + draw + ", 진 횟수 : " + lose + ", 이긴 횟수 : " + win);break;
-    		}else {System.out.println("졌습니다"); lose++; // 졋을 경우
-    			
-    		}
-    	}*/
-    		/*int win = 0;
-        	int lose = 0;
-        	int draw = 0;
-        	
-        	System.out.print("당신의 이름을 입력해주세요 : ");
-        	String name = sc.nextLine();
-        	
-        	while(true) {
-        		System.out.print("가위바위보 : ");
-        		String input = sc.nextLine();
-        		int inputResult = 3;
-        		switch(input) {
-    	    		case "가위" :
-    	    			inputResult = 0;
-    	    			break;
-    	    		case "바위" :
-    	    			inputResult = 1;
-    	    			break;
-    	    		case "보" :
-    	    			inputResult = 2;
-    	    			break;
-        		}
-        		
-        		// 컴퓨터 - 0 : 가위, 1 : 바위, 2 : 보
-        		int computer = (int)(Math.random() * 3);
-        		String computerName = "";
-        		switch(computer) {
-    	    		case 0:
-    	    			computerName = "가위";
-    	    			break;
-    	    		case 1:
-    	    			computerName = "바위";
-    	    			break;
-    	    		case 2:
-    	    			computerName = "보";
-    	    			break;
-        		}
-        		System.out.println("컴퓨터 : " + computerName);
-        		System.out.println(name + " : " + input);
-        		
-        		
-        		if(inputResult == computer) { // 비겼을 경우
-        			System.out.println("비겼습니다.");
-        			draw++;
-        		} else if(
-        				inputResult == 0 && computer == 2
-        				|| inputResult == 1 && computer == 0
-        				|| inputResult == 2 && computer == 1
-        				) { // 이겼을 경우
-        			System.out.println("이겼습니다!!");
-        			win++;
-        			System.out.println("비긴 횟수 : " + draw
-        								+ ", 진 횟수 : " + lose
-        								+ ", 이긴 횟수 : " + win);
-        			break;
-        		} else { // 졌을 경우
-        			System.out.println("졌습니다 ㅠㅠ");
-        			lose++;
-        		}
-        	}*/
-    		/*String[] rps = {"가위", "바위","보"};
-        	int win = 0;
-        	int lose = 0;
-        	int draw = 0;
-        	System.out.print("가위바위보 : ");
+    		} else if(
+    				input.equals("가위") && computerName.equals("보")
+    				|| input.equals("바위") && computerName.equals("가위")
+    				|| input.equals("보") && computerName.equals("바위")
+    				) { // 이겼을 경우
+    			System.out.println("이겼습니다!!");
+    			win++;
+    			System.out.println("비긴 횟수 : " + draw
+    								+ ", 진 횟수 : " + lose
+    								+ ", 이긴 횟수 : " + win);
+    			break;
+    		} else { // 졌을 경우
+    			System.out.println("졌습니다 ㅠㅠ");
+    			lose++; */
+    	/*
+    	int win = 0;
+    	int lose = 0;
+    	int draw = 0;
+    	
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	String name = sc.nextLine();
+    	
+    	while(true) {
+    		System.out.print("가위바위보 : ");
     		String input = sc.nextLine();
-        	
-        	System.out.print("당신의 이름을 입력해주세요 : ");
-        	String name = sc.nextLine();
-        	
-        		
-        		// 컴퓨터 - 0 : 가위, 1 : 바위, 2 : 보
-        		int computer = (int)(Math.random() * 3);
-        		
-        		// 컴퓨터는 인덱스로 값을 찾음!
-        		System.out.println("컴퓨터 : " + rps[computer]);
-        		
-        		
-        		System.out.println(name + " : " + input);
-        		
-        		// 사용자는 값으로 인덱스를 찾으면 어떨까?
-        		// 배열에서 값으로 인덱스 찾기 -> 사용자가 입력한 값을 숫자로
-        		int inputResult = Arrays.asList(rps).indexOf(input);
-        		
-        		
-        		if(inputResult == computer) { // 비겼을 경우
-        			System.out.println("비겼습니다.");
-        			draw++;
-        		} else if(
-        				inputResult == 0 && computer == 2
-        				|| inputResult == 1 && computer == 0
-        				|| inputResult == 2 && computer == 1
-        				) { // 이겼을 경우
-        			System.out.println("이겼습니다!!");
-        			win++;
-        			System.out.println("비긴 횟수 : " + draw
-        								+ ", 진 횟수 : " + lose
-        								+ ", 이긴 횟수 : " + win);
-        			break;
-        		} else { // 졌을 경우
-        			System.out.println("졌습니다 ㅠㅠ");
-        			lose++;}
-    	}*/
-   
+    		int inputResult = 3;
+    		switch(input) {
+	    		case "가위" :
+	    			inputResult = 0;
+	    			break;
+	    		case "바위" :
+	    			inputResult = 1;
+	    			break;
+	    		case "보" :
+	    			inputResult = 2;
+	    			break;
+    		}
     		
+    		// 컴퓨터 - 0 : 가위, 1 : 바위, 2 : 보
+    		int computer = (int)(Math.random() * 3);
+    		String computerName = "";
+    		switch(computer) {
+	    		case 0:
+	    			computerName = "가위";
+	    			break;
+	    		case 1:
+	    			computerName = "바위";
+	    			break;
+	    		case 2:
+	    			computerName = "보";
+	    			break;
+    		}
+    		System.out.println("컴퓨터 : " + computerName);
+    		System.out.println(name + " : " + input);
+    		
+    		
+    		if(inputResult == computer) { // 비겼을 경우
+    			System.out.println("비겼습니다.");
+    			draw++;
+    		} else if(
+    				inputResult == 0 && computer == 2
+    				|| inputResult == 1 && computer == 0
+    				|| inputResult == 2 && computer == 1
+    				) { // 이겼을 경우
+    			System.out.println("이겼습니다!!");
+    			win++;
+    			System.out.println("비긴 횟수 : " + draw
+    								+ ", 진 횟수 : " + lose
+    								+ ", 이긴 횟수 : " + win);
+    			break;
+    		} else { // 졌을 경우
+    			System.out.println("졌습니다 ㅠㅠ");
+    			lose++;
+    		}
+    	} */
+    	/*// 가위 : 0, 바위 : 1, 보 : 2
+    	String[] rps = {"가위", "바위", "보"};
+    	int win = 0;
+    	int lose = 0;
+    	int draw = 0;
+    	
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	String name = sc.nextLine();
+    	
+    	while(true) {
+    		System.out.print("가위바위보 : ");
+    		String input = sc.nextLine();
+    		
+    		// 컴퓨터 - 0 : 가위, 1 : 바위, 2 : 보
+    		int computer = (int)(Math.random() * 3);
+    		
+    		// 컴퓨터는 인덱스로 값을 찾음!
+    		System.out.println("컴퓨터 : " + rps[computer]);
+    		
+    		System.out.println(name + " : " + input);
     		
     		// 사용자는 값으로 인덱스를 찾으면 어떨까?
     		// 배열에서 값으로 인덱스 찾기 -> 사용자가 입력한 값을 숫자로!
+    		int inputResult = Arrays.asList(rps).indexOf(input);
     		
-    
-    }}
+    		if(inputResult == computer) { // 비겼을 경우
+    			System.out.println("비겼습니다.");
+    			draw++;
+    		} else if(
+    				inputResult == 0 && computer == 2
+    				|| inputResult == 1 && computer == 0
+    				|| inputResult == 2 && computer == 1
+    				) { // 이겼을 경우
+    			System.out.println("이겼습니다!!");
+    			win++;
+    			System.out.println("비긴 횟수 : " + draw
+    								+ ", 진 횟수 : " + lose
+    								+ ", 이긴 횟수 : " + win);
+    			break;
+    		} else { // 졌을 경우
+    			System.out.println("졌습니다 ㅠㅠ");
+    			lose++;
+    		}
+    	} */
+    		}
+    	
+    }
+
         		
         	
     	
