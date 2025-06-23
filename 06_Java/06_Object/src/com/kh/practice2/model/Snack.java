@@ -1,6 +1,7 @@
 package com.kh.practice2.model;
 
 public class Snack {
+	
 	private String kind;
 	private String name;
 	private String flavor;
