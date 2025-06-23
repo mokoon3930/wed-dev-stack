@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-import com.kh.practice.model.RockPaperScissor;
-
 class LoopPractice {
 	
 	Scanner sc = new Scanner(System.in);
