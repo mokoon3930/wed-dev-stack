@@ -2,7 +2,9 @@ package com.kh.practice.model;
 
 import java.time.LocalDate;
 
-public class UserInfo extends Department{
+import com.kh.practice.Application;
+
+public class UserInfo {
 	private int userNo;
 	private String id;
 	private String password;
@@ -12,13 +14,21 @@ public class UserInfo extends Department{
 	private String addr;
 	private String gender;
 	private LocalDate birthDate;
-	private Department deparment;
+	private Department department;
+
+	
+	
+	
+
 	
 	public UserInfo() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
+	
 	public UserInfo(int userNo, String id, String password, String email, String name, String phone, String addr,
-			String gender, LocalDate birthDate, Department deparment) {
+			String gender, LocalDate birthDate, Department department) {
+		super();
 		this.userNo = userNo;
 		this.id = id;
 		this.password = password;
@@ -27,10 +37,12 @@ public class UserInfo extends Department{
 		this.phone = phone;
 		this.addr = addr;
 		this.gender = gender;
-		this.birthDate = birthDate;
-		this.deparment = deparment;
+		//this.birthDate = birthDate;
+		//this.department = department;
+		
+		
 	}
-
+	
 	public int getUserNo() {
 		return userNo;
 	}
@@ -103,22 +115,19 @@ public class UserInfo extends Department{
 		this.birthDate = birthDate;
 	}
 
-	public Department getDeparment() {
-		return deparment;
+	public Department getDepartment() {
+		return department;
 	}
 
-	public void setDeparment(Department deparment) {
-		this.deparment = deparment;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
-
+	
+	
+	
 	@Override
 	public String toString() {
-		return "UserInfo [userNo=" + userNo + ", id=" + id + ", password=" + password + ", email=" + email + ", name="
-				+ name + ", phone=" + phone + ", addr=" + addr + ", gender=" + gender + ", birthDate=" + birthDate
-				+ ", deparment=" + deparment + "]";
+		return this.userNo + this.id + this.password + this.email + this.name + this.phone + this.addr + this.gender + this.birthDate + this.department;}
 	}
+
 	
-	
-	
-	
-}

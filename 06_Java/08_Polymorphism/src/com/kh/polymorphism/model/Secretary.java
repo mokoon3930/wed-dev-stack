@@ -1,7 +1,7 @@
 package com.kh.polymorphism.model;
 
-public class Secretary extends Employee{
-	
+public class Secretary extends Employee {
+
 	private String boss;
 
 	public Secretary() {
@@ -10,7 +10,6 @@ public class Secretary extends Employee{
 	public Secretary(String name, int salary, String boss) {
 		super(name, salary);
 		this.boss = boss;
-		
 	}
 
 	public String getBoss() {
@@ -25,9 +24,5 @@ public class Secretary extends Employee{
 	public String toString() {
 		return "Secretary [boss=" + boss + ", getName()=" + getName() + ", getSalary()=" + getSalary() + "]";
 	}
-	
 
-	
-	
-	
 }

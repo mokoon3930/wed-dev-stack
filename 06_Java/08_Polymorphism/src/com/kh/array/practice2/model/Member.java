@@ -1,20 +1,19 @@
 package com.kh.array.practice2.model;
 
 public class Member {
-	
+
 	private String id;
 	private String name;
-	private String password;
+	private String pwd;
 	private String email;
-	private String gender;
+	private char gender;
 	private int age;
 	public Member() {
 	}
-
-	public Member(String id, String name, String password, String email, String gender, int age) {
+	public Member(String id, String name, String pwd, String email, char gender, int age) {
 		this.id = id;
 		this.name = name;
-		this.password = password;
+		this.pwd = pwd;
 		this.email = email;
 		this.gender = gender;
 		this.age = age;
@@ -31,11 +30,11 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPassword() {
-		return password;
+	public String getPwd() {
+		return pwd;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
 	public String getEmail() {
 		return email;
@@ -43,10 +42,10 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getGender() {
+	public char getGender() {
 		return gender;
 	}
-	public void setGender(String gender) {
+	public void setGender(char gender) {
 		this.gender = gender;
 	}
 	public int getAge() {
@@ -55,12 +54,10 @@ public class Member {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
-	
 	@Override
 	public String toString() {
-		return "Menber [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", gender="
-				+ gender + ", age=" + age + "]";
+		return "Member [id=" + id + ", name=" + name + ", pwd=" + pwd + ", email=" + email + ", gender=" + gender
+				+ ", age=" + age + "]";
 	}
-	
+
 }

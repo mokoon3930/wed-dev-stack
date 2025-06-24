@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
+import com.kh.practice.view.RockPaperScissorView;
+
 class LoopPractice {
 	
 	Scanner sc = new Scanner(System.in);
@@ -16,7 +18,7 @@ class LoopPractice {
 		//l.method3();
 		//l.method4();
 		//l.method5();
-		//l.method6();
+		l.method6();
 		
 	}
  
@@ -213,7 +215,11 @@ class LoopPractice {
         이겼습니다 !
 	    비긴 횟수 : 1, 진 횟수 : 1, 이긴 횟수 : 1
     */
-    public void method6() {
+ public void method6() {
+    	
+    	RockPaperScissorView view = new RockPaperScissorView();
+    	view.gameStart();
+    
     	/*int win = 0;
     	int lose = 0;
     	int draw = 0;

@@ -3,21 +3,22 @@ package com.kh.practice;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-import com.kh.practice.controller.Controller;
+import com.kh.practice.model.UserInfo;
+
 
 public class Application {
 	
 	Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		
+				
 		Application app = new Application();
 		boolean check = true;
 		while(check) {
 			int select = app.employeeMenu();
 			switch(select) {
 				case 1:
-					app.insertEmp();
+					app.insertEmp(null);
 					break;
 				case 2:
 					app.updateEmp();
@@ -49,8 +50,7 @@ public class Application {
 	// 저장할 데이터를 사용자에게 받는 메서드
 		
 	
-	public void insertEmp() {
-		Controller u = new Controller ();
+	public void insertEmp(UserInfo U) {
 		System.out.println();
 		
 		
@@ -89,14 +89,27 @@ public class Application {
 		//System.out.print("직원 생일 (예 : 2025-06-23) : "); // LocalDate.parse(문자열) <- 문자열을 날짜로
 		//String birthDate = sc.nextLine();
 		//LocalDate birthDate = LocalDate.parse(birthDateInput);
-		//System.out.print("부서 등록 : "); // 너무 어렵다면 생략!		
+		//System.out.print("부서 등록 : "); // 너무 어렵다면 생략!
+		
+		UserInfo U1 = new UserInfo(userNo, id, password, email, name, phone, addr, gender, null, null);
+		System.out.println("입력된 사용자 정보:");
+	    System.out.println(U1.getId());
+	    
+	   public static void U1() {
+		   
+	   }
+	    
 	}
 	
 	// 수정할 데이터를 사용자에게 받는 메서드
 	public void updateEmp() {
+		
 		System.out.println("수정하려면 로그인이 필요합니다.");
 		System.out.print("아이디 입력 : ");
+		String inputid = sc.nextLine();
+		if (A.getId().equals(inputid))
 		System.out.print("비밀번호 입력 : ");
+		String password = sc.nextLine();
 		
 		// 아이디랑 비밀번호가 틀리다면!
 		System.out.println("로그인 실패! 정보 수정할 수 없습니다");

@@ -4,36 +4,31 @@ import com.kh.polymorphism.model.Employee;
 import com.kh.polymorphism.model.Engineer;
 
 public class EmployeeController {
-	
+
 	public Employee findEmployee(Employee[] emp, String name) {
-		
-		Employee findEmployee = null;
-		for (Employee employee : emp) {
-			if (employee.getName().equals(name)) {
-				findEmployee = employee;
+		for(Employee employee : emp) {
+			if(employee.getName().equals(name)) {
+				return employee;
 			}
 		}
-		return findEmployee;
+		return null;
 	}
 	
-	public int getAnnuaSalary(Employee findEmployee) {
+	public int getAnnualSalary(Employee findEmployee) {
 		if(findEmployee==null) return -1;
-		if (findEmployee instanceof Engineer) {
+		
+		if(findEmployee instanceof Engineer) {
 			Engineer engineer = (Engineer) findEmployee;
-			System.out.println(engineer.getSalary() * 12 + engineer.getBonus());
-		} else {
-			System.out.println(findEmployee.getSalary() * 12);
-		}
+			return engineer.getSalary() * 12 + engineer.getBonus();
+		} 
 		return findEmployee.getSalary() * 12;
 	}
 	
 	public int totalSalary(Employee[] emp) {
 		int sum = 0;
-		for (Employee employee : emp) {
+		for(Employee employee : emp) {
 			sum += employee.getSalary();
 		}
 		return sum;
-		
-	
 	}
 }
