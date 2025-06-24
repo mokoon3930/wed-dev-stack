@@ -4,20 +4,40 @@ import com.kh.array.practice2.model.Member;
 
 public class MemberController {
 	
-	//Member[] members = {new Member(), new Member(), new Member()}; // 객체부터 생성을 할거냐?
-	public Member[] members = new Member[3]; // 공간만 만들것인가?
+	private Member[] members = new Member[3];
+	public int count = 0;
 	
-	//멤버수
-	//public int countMember() {
-	//	return members.length;
-	//}
 	
-	//아이디 체크 -> 배열을 전부 확인하고 아이디가 있는지 없는지 여부
-	public void idCheck() {
-		for(Member member : members) {
-			System.out.println(member != null && member.getId() != null);
-			
-		}
-		
+	// members - getter
+	public Member[] getMembers() {
+		return members;
 	}
+	
+	
+	//추가 로직 !
+	public void addInfo(Member m) {
+		members[count++] = m;
+	}
+	
+	// 메서드 분리
+		// 아이디 체크 <- 등록 할때도 필요! 수정할때도 필요! 여기저기 필요한 경우!
+		public int idCheck(String id) {
+			
+			for(int i = 0; i < members.length; i++) {
+				if(members[i]!=null && members[i].getId().equals(id)){
+					// 기존 배열에서 아이디가 있는 경우
+					return i;
+				}
+			}
+			//아이디가 없는경우
+			return -1;
+		}
+		public void updateInfo(String id, String name, String email, String password) {
+			int index = idCheck(id);
+					members[index].setName(name);
+					members[index].setEmail(email);
+					members[index].setPassword(password);
+				}
+			
+		
 }
