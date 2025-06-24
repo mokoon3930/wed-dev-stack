@@ -10,74 +10,15 @@ import com.kh.array.practice2.model.Member;
 
 public class Application {
 	
+	Scanner sc = new Scanner(System.in);
+	MemberController mc = new MemberController();
+	
+	
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		Member[] members = new Member[3];
-		int count = 0;
+		Application app = new Application();
+		app.mainMenu();
 		
-		while(true) {
-		
-		System.out.println("최대 등록 가능한 회원 수는 3명입니다.");
-		System.out.println("현재 등록된 회원 수는" + count + "명입니다.");
-		System.out.println("1. 새 회원 등록");
-		System.out.println("2. 회원 정보 수정");
-		System.out.println("3. 전체 회원 정보 출력");
-		System.out.println("9. 끝내기");
-		System.out.println("메뉴 번호 : ");
-		int num = Integer.parseInt(sc.nextLine());
-		switch(num) {
-		case 1 :
-			Member m = new Member();
-			System.out.println("아이디 : ");
-			m.setId(sc.nextLine());
-			System.out.println("이름 : ");
-			m.setName(sc.nextLine());
-			System.out.println("비밀번호 : ");
-			m.setPassword(sc.nextLine());
-			System.out.println("이메일 : ");
-			m.setEmail(sc.nextLine());
-			System.out.println("성별(M/F) : ");
-			m.setGender(sc.nextLine());
-			System.out.println("나이 : ");
-			m.setAge(Integer.parseInt(sc.nextLine()));
-			
-			members[count++] = m ;
-			break;
-		case 2 :
-			System.out.println("수정할 회원의 아이디 : ");
-			String id = sc.nextLine();
-			System.out.println("수정할 이름 : ");
-			String name = sc.nextLine();
-			System.out.println("수정할 이메일 : ");
-			String email = sc.nextLine();
-			System.out.println("수정할 비밀번호 : ");
-			String password = sc.nextLine();
-			
-			for(int i = 0; i < members.length; i++) {
-				if(members[i]!=null && members[i].getId().equals(id)){
-					members[i].setName(name);
-					members[i].setEmail(email);
-					members[i].setPassword(password);
-				}
-			}
-			
-			break;
-		case 3 :
-			for(Member member : members) {
-				if(member != null) {
-					System.out.println(member);
-				}
-			}
-			break;
-		case 9 : 
-			System.out.println("끝내기!");
-			break;
-		 default : System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
-		}
-		
-	
-	
 		}
  		/*
 		 * 회원 수가 3명이 최대 등록 가능
@@ -113,9 +54,124 @@ public class Application {
 		 * 메뉴 번호 : 
 		 * */
 		
+	
+	
+	// 전체 매뉴
+	public void mainMenu() {
+		boolean check = true;
+		while(check) {
+			
+			System.out.println("최대 등록 가능한 회원 수는 3명입니다.");
+			System.out.println("현재 등록된 회원 수는" + mc.count + "명입니다.");
+			if (mc.count < 3) {
+				System.out.println("1. 새 회원 등록");
+			}else {
+				System.out.println("회원 수가 모두 꽉 찼기 때문에 일부 메뉴만 오픈합니다.");
+			}
+			System.out.println("2. 회원 정보 수정");
+			System.out.println("3. 전체 회원 정보 출력");
+			System.out.println("9. 끝내기");
+			
+			System.out.println("메뉴 번호 : ");
+			int num = Integer.parseInt(sc.nextLine());
+			switch(num) {
+			case 1 :
+				insertMember();
+				break;
+			case 2 :
+				updateMember();
+				break;
+			case 3 :
+				printAll();
+				break;
+			case 9 : 
+				System.out.println("끝내기!");
+				check = false;
+				break;
+				
+			 default : System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
+			}
+		}
+	}
+	
+	// 메뉴 번호 1 : insertMember
+	public void insertMember() {
+		Member m = new Member();
+		System.out.println("아이디 : ");
+		m.setId(sc.nextLine());
 		
+		// 아이디 체크 부분!
+		boolean idcheck = mc.idCheck(m.getId()) == -1; // 아이디가 없는 경우!
+		// 아이디 이외에 내용이 아이다가 하나라도 있는 경우 안나오게 처리
+		if(idcheck) {
+		System.out.println("이름 : ");
+		m.setName(sc.nextLine());
+		System.out.println("비밀번호 : ");
+		m.setPassword(sc.nextLine());
+		System.out.println("이메일 : ");
+		m.setEmail(sc.nextLine());
+		System.out.println("성별(M/F) : ");
+		m.setGender(sc.nextLine());
+		System.out.println("나이 : ");
+		m.setAge(Integer.parseInt(sc.nextLine()));
 		
+		// 추가 로직 와야하는 부분!
+		mc.addInfo(m);}
+		}
+	
+	
+	// 메뉴 번호 2 : updateMember
+	public void updateMember() {
+		System.out.println("수정할 회원의 아이디 : ");
+		String id = sc.nextLine();
 		
+		// 아이디 체크 부분
+		boolean idUpdate = mc.idCheck(id) == -1;
+		if (idUpdate) {
+			System.out.println("회원 정보가 없습니다.");
+		}else {
+			System.out.println("수정할 이름 : ");
+			String name = sc.nextLine();
+			System.out.println("수정할 이메일 : ");
+			String email = sc.nextLine();
+			System.out.println("수정할 비밀번호 : ");
+			String password = sc.nextLine();
+			
+			// 수정하는 로직!
+			mc.updateInfo(id, name, email, password);
+		}
 	}
 
+	// 메뉴 번호 3 전체 회원 정보 출력
+	public void printAll() {
+		for(Member member : mc.getMembers()) {
+			if(member != null) {
+				System.out.println(member);
+			}
+		}
+		
+		
+				
+		}
+	
+	
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
