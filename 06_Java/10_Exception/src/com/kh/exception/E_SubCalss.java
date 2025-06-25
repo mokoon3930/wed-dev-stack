@@ -1,5 +1,6 @@
 package com.kh.exception;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class E_SubCalss extends E_SuperClass {
