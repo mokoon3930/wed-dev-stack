@@ -1,4 +1,4 @@
-package com.kh.practice;
+package com.kh.array.practice;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

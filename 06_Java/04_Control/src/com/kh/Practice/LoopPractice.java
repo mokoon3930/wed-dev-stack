@@ -1,4 +1,4 @@
-package com.kh.practice;
+package com.kh.array.practice;
 
 import java.util.Arrays;
 import java.util.Scanner;
