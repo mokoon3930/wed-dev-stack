@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.kh.list.model.Person;
+import com.kh.practice2.controller.MemberController;
 import com.kh.practice2.model.Book;
 import com.kh.practice2.model.Member;
 
@@ -36,7 +37,7 @@ public class Application {
 	
 	//멤버들의 정보가 들어갈 공간
 	
-	
+	MemberController mc = new MemberController();
 	
 	
 	
@@ -54,13 +55,7 @@ public class Application {
     }
     public void method1() {
     	
-    	System.out.println("===메뉴===");
-    	System.out.println("1. 마이페이지");
-    	System.out.println("2. 도서 대여하기");
-    	System.out.println("3. 로그아웃");
-    	System.out.println("4. 프로그램 종료");
-    	System.out.println("메뉴번호 ");
-    	System.out.println("이름 : ");
+    	int num = sc.nextInt();
     	String name = sc.next();
     	System.out.println("나이 : ");
     	int age = sc.nextInt();
@@ -69,6 +64,17 @@ public class Application {
     	member.setName(name);
     	member.setAge(age);
     	members.add(member);
+    	
+    	
+    	
+    	System.out.println("===메뉴===");
+    	System.out.println("1. 마이페이지");
+    	System.out.println("2. 도서 대여하기");
+    	System.out.println("3. 로그아웃");
+    	System.out.println("4. 프로그램 종료");
+    	System.out.println("메뉴번호 ");
+    	
+    	
     	
     	
     	
