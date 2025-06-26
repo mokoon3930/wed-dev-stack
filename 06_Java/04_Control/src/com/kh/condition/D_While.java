@@ -176,7 +176,7 @@ public class D_While {
 	
 	public static void main(String[] args) {
 		D_While d = new D_While();
-		d.method6();
+		d.method4();
 	}
 
 }

@@ -160,7 +160,7 @@ public class A_Array {
 	
 	public static void main(String[] args) {
 			A_Array a = new A_Array();
-			a.method8();
+			a.method6();
 	}
 
 }

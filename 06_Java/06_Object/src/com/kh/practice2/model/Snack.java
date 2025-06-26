@@ -15,7 +15,7 @@ public class Snack {
 		this.kind = kind;
 		this.name = name;
 		this.flavor = flavor;
-		this.numOf = numOf;
+		this.numOf = numOf;s
 		this.price = price;
 	}
 	
