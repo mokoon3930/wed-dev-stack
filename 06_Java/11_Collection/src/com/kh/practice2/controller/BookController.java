@@ -12,6 +12,8 @@ public class BookController {
 	// 선택사항 - 책 제목을 기준으로 현재 대여 인원 수 파악
 	private Map<String, Integer> bookCount = new HashMap<>();
 	
+	
+	
 	// 책 대여
 	public String rentBook(Book book, Member member) {
 		return null;
