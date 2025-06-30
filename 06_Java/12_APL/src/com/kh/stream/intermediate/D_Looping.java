@@ -1,4 +1,4 @@
-package com.kh.stream.inrermediate;
+package com.kh.stream.intermediate;
 
 import java.util.Arrays;
 

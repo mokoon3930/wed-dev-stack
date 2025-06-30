@@ -2,17 +2,13 @@ package com.kh.practice3.compare;
 
 import java.util.Comparator;
 
+import com.kh.practice3.model.Music;
 
-import com.kh.practice3.model.Music2;
-
-public class SongAscending2 implements Comparator<Music2>{
+public class SongAscending2 implements Comparator<Music> {
 
 	@Override
-	public int compare(Music2 o1, Music2 o2) {
-		return 0;
+	public int compare(Music o1, Music o2) {
+		return o1.getSong().compareTo(o2.getSong());
 	}
 
-	
-	
-	
 }
