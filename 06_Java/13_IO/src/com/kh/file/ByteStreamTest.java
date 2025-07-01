@@ -20,7 +20,6 @@ import java.io.IOException;
  * - 하나의 스트림으로 입출력을 동시에 할 수 없음 (단방향 통신)
  * - 입출력을 동시에 수행하려면 2개의 스트림 필요
  * 
- * 
  * */
 public class ByteStreamTest {
 	
