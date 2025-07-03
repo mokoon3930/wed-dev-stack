@@ -22,28 +22,13 @@ public class PersonController {
 			e.printStackTrace();
 		}
 	}
-	// 고정적으로 반복 -- 디비연결 , (자원반납)
-	//2. 디비연결
-	public Connection getConnect() throws SQLException {
-		return DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASSWORD);
-	}
-	public void close(PreparedStatement ps, Connection connect) throws SQLException {
-		
-		ps.close();		
-		connect.close();
-	}
-	public void close(ResultSet rs, PreparedStatement ps, Connection connect) throws SQLException {
-		
-		rs.close();
-		close(ps, connect);
-	}
 	
-	// ----------변동저인 반복 : DAO(Database Access Object)
 
 	// person 테이블에 데이터 추가 - INSERT
-	public void addPerson(String name, int age, String addr) throws SQLException {
-		
-			Connection connect = getConnect();
+	public void addPerson() {
+		Connection connect;
+		try {
+			connect = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASSWORD);
 			String query = "INSERT INTO person( name, age, addr) VALUES(?, ?, ?)";
 			PreparedStatement ps = connect.prepareStatement(query);
 			
@@ -52,23 +37,28 @@ public class PersonController {
 			ps.setString(3, "오산시");
 			ps.executeUpdate();
 			
-			close(ps, connect);
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
 		
 	}
-	
-	
 
 	// person 테이블에 있는데이터 전체 보여주기 - SELECT
 	public void searchAllPerson() {
+		Connection connect;
 		try {
-			Connection connect = getConnect();
+			connect = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASSWORD);
 			String query = "SELECT * FROM person";
 			PreparedStatement ps = connect.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				System.out.println(rs.getInt("id") + rs.getString("name") + rs.getInt("age") + rs.getString("addr"));
 			}
-			close(rs, ps, connect);
+			
 			
 		} catch (SQLException e) {
 			
@@ -80,18 +70,17 @@ public class PersonController {
 		
 	}
 
-
 	// person 테이블에 있는데이터 전체 보여주기 - SELECT -> id로
 	public void searchPerson() {
+		Connection connect;
 		try {
-			Connection connect = getConnect();
+			connect = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASSWORD);
 			String query = "SELECT id FROM person";
 			PreparedStatement ps = connect.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				System.out.println(rs.getInt("id"));
 			}
-			close(rs, ps, connect);
 			
 		} catch (SQLException e) {
 			
@@ -101,8 +90,9 @@ public class PersonController {
 
 	// person 테이블 데이터 수정 - UPDATE
 	public void updatePerson() {
+		Connection connect;
 		try {
-			Connection connect = getConnect();
+			connect = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASSWORD);
 			String query = "UPDATE person SET name = ?, age = ?, addr = ? WHERE id = ?";
 			PreparedStatement ps = connect.prepareStatement(query);
 			
@@ -114,7 +104,7 @@ public class PersonController {
 			ps.setInt(4, 1);
 			ps.executeUpdate();
 			
-			close(ps, connect);
+			
 			
 		} catch (SQLException e) {
 			
@@ -125,13 +115,11 @@ public class PersonController {
 	// person 데이블 데이터 삭제 - DELETE
 	public void removePerson() {
 		try {
-			Connection connect = getConnect();
+			Connection connect = DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASSWORD);
 			String query = "DELETE FROM person WHERE id = ?";
 			PreparedStatement ps = connect.prepareStatement(query);
 			ps.setInt(1, 2);
 			ps.executeUpdate();
-			
-			close(ps, connect);
 			
 		} catch (SQLException e) {
 			

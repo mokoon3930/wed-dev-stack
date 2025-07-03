@@ -32,6 +32,40 @@ SELECT * FROM person;
 
 SELECT id FROM person;
 
+SELECT * FROM person WHERE name = '강성모' AND age = 20 AND addr = '오산시';
+
+
+
+
+CREATE TABLE book(
+	book_No INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+	author VARCHAR(50) NOT NULL,
+    access_age INT DEFAULT 0
+);
+
+CREATE TABLE member(
+	id VARCHAR(100) PRIMARY KEY,
+    name VARCHAR(100),	
+	pwd VARCHAR(200),
+    age INT
+);
+
+CREATE TABLE Rent(
+	rentNo int PRIMARY KEY AUTO_INCREMENT,
+    id VARCHAR(50),
+    bookNo INT,
+    rent_Date Date
+);
+
+ALTER TABLE Rent ADD 
+FOREIGN KEY (id) REFERENCES Member (id);
+
+ALTER TABLE Rent ADD
+FOREIGN KEY (book_No) REFERENCES Book (book_No);
+
+drop table book;
+
 
 
 
