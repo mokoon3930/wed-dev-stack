@@ -1,10 +1,10 @@
-package dao;
+package dao.copy;
 
 import java.util.ArrayList;
 
 import vo.Rent;
 
-public class RentDAO {
+public class RentDAO2 {
 	
 	//7. 책 대여
 	public void rentBook(String id, int bookNo) {

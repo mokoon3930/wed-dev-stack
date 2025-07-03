@@ -13,23 +13,16 @@ import vo.Person;
 
 /*
  * DAO(Data Access Object)
- * - 데이터 베이스에 접근해서 CRUD를 처리하는 객체
+ * - 데이터베이스에 접근해서 CRUD를 처리하는 객체
  * */
 public class PersonDAO {
-	
-	// 실글톤 패턴 : 실제로 생성되는 객체는 하나!
-	// 1. private static 객체 생성
+
+	// 싱글톤 패턴 : 실제로 생성되는 객체는 하나!
+	// 1. private static 객체(instance) 생성
 	private static PersonDAO instance = new PersonDAO();
 	
-	//2. private 생성자
-	
-	//2. public static 메서드로 인스턴스 제공
-	public static PersonDAO getInstance() {
-		return instance;
-	}
-	
-	
-	public PersonDAO() {
+	// 2. private 생성자
+	private PersonDAO() {
 		try {
 			// 1. 드라이버 로딩
 			Class.forName(ServerInfo.DRIVER);
@@ -37,6 +30,11 @@ public class PersonDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	// 3. public static 메서드로 인스턴스 제공
+	public static PersonDAO getInstance() {
+		return instance;
 	}
 
 	// 고정적으로 반복 -- 디비 연결, 자원반납
@@ -55,6 +53,8 @@ public class PersonDAO {
 		rs.close();
 		close(ps, connect);
 	}
+
+	// ------- 변동적인 반복 : DAO(Database Access Object)
 
 	public boolean checkName(String name, int age, String addr) throws SQLException {
 		Connection connect = getConnect();
@@ -90,6 +90,7 @@ public class PersonDAO {
 		close(ps, connect);
 
 		return name + "님, 회원가입 완료";
+
 	}
 
 	// person 테이블에 있는 데이터 전체 보여주기 - SELECT
@@ -128,33 +129,32 @@ public class PersonDAO {
 		close(rs, ps, connect);
 
 		return person;
-
 	}
 
 	// person 테이블에 데이터 수정 - UPDATE
 	public String updatePerson(String name, int age, String addr, int id) throws SQLException {
 		Connection connect = getConnect();
 
-		String query = "UPDATE person SET name = ?, age = ?, addr = ? WHERE id = ? ";
+		String query = "UPDATE person SET name = ?, age = ?, addr = ? WHERE id = ?";
 		PreparedStatement ps = connect.prepareStatement(query);
-
 		ps.setString(1, name);
 		ps.setInt(2, age);
 		ps.setString(3, addr);
 		ps.setInt(4, id);
+
 		ps.executeUpdate();
 
 		close(ps, connect);
 
-		return "아이디가 " + id + "인 회원의 정보사항이 수정되었습니다";
+		return "아이디가 " + id + "인 회원의 정보사항이 수정되었습니다.";
 	}
 
 	// person 테이블에 데이터 삭제 - DELETE
 	public boolean removePerson(int id) throws SQLException {
 		Connection connect = getConnect();
+
 		String query = "DELETE FROM person WHERE id = ?";
 		PreparedStatement ps = connect.prepareStatement(query);
-
 		ps.setInt(1, id);
 
 		ps.executeUpdate();
@@ -162,7 +162,5 @@ public class PersonDAO {
 		close(ps, connect);
 		
 		return true;
-
 	}
-
 }

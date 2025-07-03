@@ -1,33 +1,36 @@
-package dao;
+package dao.copy;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import config.ServerInfo;
 import vo.Member;
+import vo.copy.Member2;
 
-public class MemberDAO {
+public class MemberDAO2 {
 	
-	private static MemberDAO instance = new MemberDAO();
+	private static MemberDAO2 instance = new MemberDAO2();
 	
-	public MemberDAO() {
+	private MemberDAO2() {
 		try {
 			Class.forName(ServerInfo.DRIVER);
 		} catch (ClassNotFoundException e) {
-			
 			e.printStackTrace();
 		}
+	}
+	
+	public static MemberDAO2 getInstance() {
+		return instance;
 	}
 	
 	public Connection connect() throws SQLException {
 		return DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASSWORD);
 	}
-	
+
 	// 4. 회원가입
-	public void register(Member member) throws SQLException {
+	public void register(Member2 member) throws SQLException {
 		Connection connect = connect();
 		String query = "INSERT INTO member VALUES(?, ?, ?, ?)";
 		PreparedStatement ps = connect.prepareStatement(query);
@@ -38,51 +41,13 @@ public class MemberDAO {
 		ps.executeUpdate();
 	}
 	
-	//5 . 로그인
-	public Member login(String id, String pwd) throws SQLException {
-		Connection connect = connect();
-		String query = "SELECT * FROM member WHERE id = ?";
-		PreparedStatement ps = connect.prepareStatement(query);
-		ps.setString(1, id);
-		
-		ResultSet rs = ps.executeQuery();
-		
-		while(rs.next()) {
-			if(id.equals()) {
-				
-			}
-		}
-		
+	// 5. 로그인
+	public Member login(String id, String pwd) {
 		return null;
 	}
 	
-	//6. 회원탈퇴
+	// 6. 회원탈퇴
 	public void delete(String id) {
 		
 	}
-
-	public static MemberDAO getInstance() {
-		
-		return null;
-	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

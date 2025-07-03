@@ -82,6 +82,8 @@ public class BookRentApp {
 		System.out.println("나이 > ");
 		member.setAge(Integer.parseInt(sc.nextLine()));
 		
+		mc.register(member);
+		
 	}
 	
 	private void login() {
