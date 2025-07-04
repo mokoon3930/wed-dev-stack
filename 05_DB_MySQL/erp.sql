@@ -38,7 +38,7 @@ SELECT * FROM person WHERE name = '강성모' AND age = 20 AND addr = '오산시
 
 
 CREATE TABLE book(
-	book_No INT PRIMARY KEY AUTO_INCREMENT,
+	book_no INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(100) NOT NULL,
 	author VARCHAR(50) NOT NULL,
     access_age INT DEFAULT 0
@@ -46,29 +46,30 @@ CREATE TABLE book(
 
 CREATE TABLE member(
 	id VARCHAR(100) PRIMARY KEY,
-    name VARCHAR(100),	
-	pwd VARCHAR(200),
-    age INT
+    name VARCHAR(100) NOT NULL,	
+	pwd VARCHAR(200) NOT NULL,
+    age INT NOT NULL
 );
 
-CREATE TABLE Rent(
-	rentNo int PRIMARY KEY AUTO_INCREMENT,
-    id VARCHAR(50),
-    bookNo INT,
-    rent_Date Date
+CREATE TABLE rent(
+	rent_no INT PRIMARY KEY AUTO_INCREMENT,
+    id VARCHAR(100),
+    book_no INT,
+    rent_Date Date DEFAULT (CURRENT_DATE)
 );
 
 ALTER TABLE Rent ADD 
 FOREIGN KEY (id) REFERENCES Member (id);
 
 ALTER TABLE Rent ADD
-FOREIGN KEY (book_No) REFERENCES Book (book_No);
+FOREIGN KEY (book_no) REFERENCES Book (book_no);
 
-drop table book;
+drop table client_info;
 
+DELETE FROM member;
+SELECT * FROM member;
 
-
-
+SELECT * FROM rent JOIN book USING(book_no) WHERE id = 'test01';
 
 
 
