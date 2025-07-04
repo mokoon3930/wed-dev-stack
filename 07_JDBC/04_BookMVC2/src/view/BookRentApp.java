@@ -206,7 +206,7 @@ public class BookRentApp {
 		for(Rent r : list) {
 			System.out.println(r);
 		}
-		System.out.println("책 번호 > ");
+		System.out.println("취소할 책 번호 > ");
 		int rentNo = Integer.parseInt(sc.nextLine());
 		rc.deleteRent(rentNo);
 	}
