@@ -66,8 +66,8 @@ public class BookRentApp {
 			for(Book b : list) {
 				System.out.println(b);
 			}
-		}else {
-			System.out.println("등록된 책이 없습니다.. 등록 해주세요 ㅠㅠ");
+		} else {
+			System.out.println("등록된 책이 없습니다.. 등록해주세요 ㅠㅠ");
 		}
 	}
 	
@@ -121,28 +121,28 @@ public class BookRentApp {
 	
 	// 1. 책 등록
 	public void registerBook() {
-		System.out.println("책 재목 > ");
+		System.out.print("책 제목 > ");
 		String title = sc.nextLine();
-		System.out.println("책 저자 > ");
+		System.out.print("책 저자 > ");
 		String author = sc.nextLine();
-		System.out.println("책 연령제한");
+		System.out.print("책 연령제한 > ");
 		int accessAge = Integer.parseInt(sc.nextLine());
 		if(bc.registerBook(title, author, accessAge)) {
-			System.out.println(title + "책 등록이 완료 되었습니다!");
-		}else {
-			System.out.println("책 등록 하는데 실패 하셨습니다. 다시 등록 해주세요");
+			System.out.println(title + " 등록이 완료되었습니다!");
+		} else {
+			System.out.println("책 등록하는데 실패하셨습니다. 다시 등록해주세요!");
 		}
 	}
 	
 	// 2. 책 삭제
 	public void sellBook() {
 		printBookAll();
-		System.out.println("삭재할 책 제목 > ");
+		System.out.print("삭제할 책 제목 > ");
 		String title = sc.nextLine();
 		if(bc.sellBook(title)) {
-			System.out.println(title + "이 삭제되었습니다");
-		}else {
-			System.out.println("책 삭제하는데 싶래 했습니다 ㅠㅠ");
+			System.out.println(title + "이 삭제되었습니다.");
+		} else {
+			System.out.println("책 삭제하는데 실패했습니다 ㅠㅠ");
 		}
 	}
 	
@@ -183,32 +183,38 @@ public class BookRentApp {
 	// 3. 책 대여
 	public void rentBook() {
 		printBookAll();
-		System.out.println("대여할 책 제목 > ");
+		System.out.print("대여할 책 제목 > ");
 		String title = sc.nextLine();
 		if(rc.rentBook(this.member.getId(), title)) {
-			System.out.println(this.member.getName() + "님이" + title + "을 대여하셨습니다..");
-		}else {
-			System.out.println("대여 싫패");
+			System.out.println(this.member.getName() + "님이 " + title + "을 대여하였습니다..");
+		} else {
+			System.out.println("대여하는데 실패..!");
 		}
 	}
 
 	// 4. 내가 대여한 책 조회
 	public void printRentBook() {
-		ArrayList<Rent>list = rc.printRentBook(this.member.getId());
-		for(Rent r : list) {
-			System.out.println(r);
+		ArrayList<Rent> list = rc.printRentBook(this.member.getId());
+		if(list.size() > 0) {
+			for(Rent r : list) {
+				System.out.println(r.getBook());
+			}
+		} else {
+			System.out.println("대여한 책이 없습니다. 대여해주세요!");
 		}
+		
 	}
 	
 	// 5. 대여 취소
 	public void deleteRent() {
-		ArrayList<Rent>list = rc.printRentBook(this.member.getId());
-		for(Rent r : list) {
-			System.out.println(r);
+		printRentBook();
+		System.out.print("취소할 대여 책 제목 > ");
+		String title = sc.nextLine();
+		if(rc.deleteRent(title, this.member.getId())) {
+			System.out.println("대여가 취소되었습니다.");
+		} else {
+			System.out.println("취소하는데 실패하였습니다.");
 		}
-		System.out.println("취소할 책 번호 > ");
-		int rentNo = Integer.parseInt(sc.nextLine());
-		rc.deleteRent(rentNo);
 	}
 	
 }

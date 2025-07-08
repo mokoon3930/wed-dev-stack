@@ -1,27 +1,19 @@
 package controller;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 
-import com.mysql.cj.xdevapi.RemoveStatement;
-
-import dao.BookDAO;
 import dao.MemberDAO;
-import dao.RentDAO;
 import vo.Member;
-import vo.Rent;
 
 public class MemberController {
 
 	private MemberDAO dao = MemberDAO.getInstance();
-	private RentDAO dao2 = RentDAO.getInstance();
-	private BookDAO dao3 = BookDAO.getInstance();
 	
 	// 4. 회원가입
 	public String register(Member member) {
 		try {
 			dao.register(member);
-			return member.getName() + "님이 회원가입 하셨습니다";
+			return member.getName() + "님이 회원가입하셨습니다!";
 		} catch (SQLException e) {
 			return "기존 회원 아이디가 있어서 다른 아이디로 가입해주세요";
 		}
@@ -34,7 +26,6 @@ public class MemberController {
 		} catch (SQLException e) {
 			return null;
 		}
-		
 	}
 	
 	// 6. 회원탈퇴
@@ -46,20 +37,5 @@ public class MemberController {
 		} catch (SQLException e) {
 			return false;
 		}
-		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
