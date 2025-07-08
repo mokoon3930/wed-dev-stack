@@ -19,8 +19,6 @@ public class registerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
 		
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
@@ -28,7 +26,7 @@ public class registerServlet extends HttpServlet {
 		int age = Integer.parseInt(request.getParameter("age"));
 		
 		MemberDAO dao = new MemberDAO();
-		ArrayList<Member> member = new ArrayList<>();
+	
 		
 		try {
 			dao.register(new Member(id, pwd, name, age));
@@ -36,6 +34,7 @@ public class registerServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		response.sendRedirect("result.jsp");
 	
 		request.setAttribute("name", name);
 		request.getRequestDispatcher("register.jsp").forward(request, response);

@@ -18,10 +18,11 @@ public class searchServlet extends HttpServlet {
     
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		MemberDAO dao = new MemberDAO();
+		
 		
 		try {
-			dao.search("id");
+			MemberDAO dao = new MemberDAO();
+			Member member = dao.search("id");
 		} catch (SQLException e) {
 	
 			

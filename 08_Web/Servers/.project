@@ -3,6 +3,7 @@
 	<name>Servers</name>
 	<comment></comment>
 	<projects>
+		<project>04_MemberLogin</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

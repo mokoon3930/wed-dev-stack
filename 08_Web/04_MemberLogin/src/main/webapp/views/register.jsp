@@ -18,7 +18,6 @@
 	<label>이름 : <input type="text" name="name"></label><br>
 	<label>나이 : <input type="number" name="age"></label><br>
 	<input type="submit" value="회원가입">
-	</form>
 </form>
 </body>
 </html>

@@ -10,7 +10,7 @@
 	<h1>회원 관리</h1>
 	<ul>
 		<%-- 로그인 되어 있지 않은 경우 --%>
-		<li><a href="/views/register.jsp">회원가입</a></li>
+		<li><a href="register.jsp">회원가입</a></li>
 		
 		<li><a href="/views/login.jsp">로그인</a></li>
 		
