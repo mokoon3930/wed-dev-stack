@@ -12,29 +12,26 @@ import java.sql.SQLException;
 
 import dao.MemberDAO;
 
-
-@WebServlet("/search")
-public class searchServlet extends HttpServlet {
+@WebServlet("/register")
+public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
-		MemberDAO dao = new MemberDAO();
 		
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+		String name = request.getParameter("name");
+		int age = Integer.parseInt(request.getParameter("age"));
+		
+		MemberDAO dao = new MemberDAO();
 		try {
-			Member member = dao.search(id);
-			
-			request.setAttribute("member", member);
-			
-			// /views/result.jsp 보넴
-			request.getRequestDispatcher("/views/result.jsp").forward(request, response); 
+			dao.register(new Member(id, pwd, name, age));
 		} catch (SQLException e) {
-	
-			
+			e.printStackTrace();
 		}
 		
-		
+		response.sendRedirect("/");
+
 	}
 
 }

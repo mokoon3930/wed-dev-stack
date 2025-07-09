@@ -12,16 +12,16 @@
 						호출 : /register, 방식 : post 
 						RegisterSevlet index.jsp로 이동 --%>
 						
-<%-- 입역 받기 <form> 
+<%-- 입력 받기 <form> 
 	action - 어디로 보넬것인가?
 	method - 보네는 방식  
 	--%>
-	<h1>회원 가입</h1>
-	<form method="post" action="/register"> 
-		<label>아이디 : <input type="text" name="id"></label><br> 
-		<label>비밀번호: <input type="password" name="pwd"></label><br> 
-		<label>이름 : <input type="text" name="name"></label><br>
-		<label>나이 : <input type="number" name="age"></label><br>
+	<<h1>회원가입</h1>
+	<form action="/register" method="post">
+		아이디 : <input type="text" name="id"/><br>
+		비밀번호 : <input type="password" name="pwd"><br>
+		이름 : <input type="text" name="name"><br>
+		나이 : <input type="number" name="age"><br>
 		<input type="submit" value="회원가입">
 	</form>
 
