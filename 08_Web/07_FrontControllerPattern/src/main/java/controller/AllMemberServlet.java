@@ -9,32 +9,30 @@ import vo.Member;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import dao.MemberDAO;
 
 
-@WebServlet("/search")
-public class searchServlet extends HttpServlet {
+@WebServlet("/allMember")
+public class AllMemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
+   
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
 		MemberDAO dao = new MemberDAO();
 		
 		try {
-			Member member = dao.search(id);
-			
-			request.setAttribute("member", member);
-			
-			// /views/result.jsp 보넴
-			request.getRequestDispatcher("/views/result.jsp").forward(request, response); 
+			List<Member> list = dao.resultAll();
+			request.setAttribute("list", list);
+			request.getRequestDispatcher("/view/allMember.jps").forward(request, response);
 		} catch (SQLException e) {
-	
 			
+			e.printStackTrace();
 		}
 		
-		
 	}
+
+	
+	
 
 }

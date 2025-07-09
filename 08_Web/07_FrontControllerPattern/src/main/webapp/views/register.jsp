@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +17,10 @@
 	action - 어디로 보넬것인가?
 	method - 보네는 방식  
 	--%>
+
 	<h1>회원 가입</h1>
-	<form method="post" action="/register"> 
+	<form action="/front" method="post">
+	<input type="hidden" name="command" value="register">
 		<label>아이디 : <input type="text" name="id"></label><br> 
 		<label>비밀번호: <input type="password" name="pwd"></label><br> 
 		<label>이름 : <input type="text" name="name"></label><br>

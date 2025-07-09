@@ -5,36 +5,24 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import vo.Member;
 
 import java.io.IOException;
-import java.sql.SQLException;
-
-import dao.MemberDAO;
 
 
-@WebServlet("/search")
-public class searchServlet extends HttpServlet {
+@WebServlet("/logout")
+public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     
+ 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
-		MemberDAO dao = new MemberDAO();
+		HttpSession session = request.getSession(); // 로그인 정보는 세션에 담겨있음
+		Member member = (Member) session.getAttribute("member");
 		
-		try {
-			Member member = dao.search(id);
-			
-			request.setAttribute("member", member);
-			
-			// /views/result.jsp 보넴
-			request.getRequestDispatcher("/views/result.jsp").forward(request, response); 
-		} catch (SQLException e) {
-	
-			
+		if(member!=null) {
+			session.invalidate();
 		}
-		
-		
+		response.sendRedirect("/");
 	}
-
 }
