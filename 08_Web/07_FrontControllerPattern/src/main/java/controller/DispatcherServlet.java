@@ -10,6 +10,7 @@ import vo.Member;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import dao.MemberDAO;
 
@@ -39,10 +40,15 @@ public class DispatcherServlet extends HttpServlet {
 		try {
 			if(command.equals("login")) {
 				path = login(request, response);
+			}else if(command.equals("allMember")) {
+				System.out.println("호출");
+				path = allMember(request, response);
+			}else if(command.equals("logout")) {
+				path = logout(request, response);
 			}else if(command.equals("register")) {
 				path = register(request, response);
 			}else if(command.equals("search")) {
-				path = register(request, response);
+				path = search(request, response);
 			}
 		request.getRequestDispatcher(path).forward(request, response);
 		} catch (SQLException e) {
@@ -69,30 +75,47 @@ public class DispatcherServlet extends HttpServlet {
 		
 	}
 	
-	protected String register(HttpServletRequest request, HttpServletResponse response) {
+	protected String register(HttpServletRequest request, HttpServletResponse response) throws SQLException {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
 		
 		MemberDAO dao = new MemberDAO();
-		
+		dao.register(new Member(id, pwd, name, age));
 		return "index.jsp";
 	
 	}
 	
 	protected String search(HttpServletRequest request, HttpServletResponse response) throws SQLException {
 		String id = request.getParameter("id");
-		String name = request.getParameter("name");
-		int age = Integer.parseInt(request.getParameter("age"));
 		MemberDAO dao = new MemberDAO();
-		
 		Member member = dao.search(id);
+		request.setAttribute("member", member);
+		return "/views/result.jsp";
+	}
+	
+	protected String allMember(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+			MemberDAO dao = new MemberDAO();
+			List<Member> list = dao.resultAll();
+			request.setAttribute("list", list);
+			System.out.println(list);
+			return "/views/allMember.jsp";	
+	}
+	
+	protected String logout(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession(); // 로그인 정보는 세션에 담겨있음
+		Member member = (Member) session.getAttribute("member");
+		if(member!=null) {
+			session.invalidate();
+		}
+		return "index.jsp"; 
+	}
 		
-		return "/result.jsp";
+		
 	}
 
-}
+
 
 
 

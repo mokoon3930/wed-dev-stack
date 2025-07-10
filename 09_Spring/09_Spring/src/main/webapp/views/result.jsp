@@ -9,14 +9,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>회원정보</h1>
-	
+	<h1>회원 정보</h1>
 	<ul>
 		<li>아이디 : ${member.id}</li>
 		<li>이름 : ${member.name}</li>
 		<li>나이 : ${member.age}</li>
 	</ul>
-	
 	<a href="/">메인 페이지로 이동</a>
 </body>
 </html>
+
+
+
+
+
+
+

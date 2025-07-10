@@ -57,7 +57,7 @@ CREATE TABLE rent(
     book_no INT,
     rent_Date Date DEFAULT (CURRENT_DATE)
 );
-
+customercustomer
 ALTER TABLE Rent ADD 
 FOREIGN KEY (id) REFERENCES Member (id) ON DELETE CASCADE;
 

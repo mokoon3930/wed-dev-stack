@@ -18,8 +18,8 @@
 		</c:when>
 		<c:otherwise>
 		<li><a href="/views/search.jsp">회원검색</a></li>
-		<li><a href="/front?command=allMember">전체회원검색</a></li>
-		<li><a href="/front?command=logout">로그아웃</a></li>
+		<li><a href="/allMember.do">전체회원검색</a></li>
+		<li><a href="/logout.do">로그아웃</a></li>
 		</c:otherwise>
 	</c:choose>
 	</ul>
