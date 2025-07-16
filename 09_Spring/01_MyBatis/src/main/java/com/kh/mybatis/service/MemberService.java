@@ -1,5 +1,6 @@
 package com.kh.mybatis.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,10 @@ public class MemberService {
 	public List<Member> search(SearchDTO dto) {
 		return mapper.search(dto);
 		
+	}
+	
+	public void selectDelete(List<String> idList) {
+		 mapper.selectDelete(idList);
 	}
 	
 
