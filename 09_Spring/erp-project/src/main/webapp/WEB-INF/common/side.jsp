@@ -4,6 +4,16 @@
 	<h1><a href="/">ERP</a></h1>
 	<nav>
 		<div class="menu-group">
+					<div class="menu-title">재무관리</div>
+					<div class="submenu">
+						<a href="/finance/salary">급여관리</a>
+						<a href="/finance/budget">예산 관리</a>
+						<a href="/finance/transaction">수입/지출 관리</a>
+						<a href="/finance/stats">매출 분석</a>
+						<a href="/finance/purchase">매입 내역 관리</a>
+					</div>
+				</div>
+		<div class="menu-group">
 			<div class="menu-title">프로젝트 관리</div>
 			<div class="submenu">
 				<a href="#">프로젝트 목록</a>
