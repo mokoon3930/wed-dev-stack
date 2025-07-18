@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.port": 5502
+  "liveServer.settings.port": 5502,
+  "livePreview.defaultPreviewPath": "/02_CSS/08_미디어쿼리.html"
 }

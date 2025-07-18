@@ -42,10 +42,16 @@ public class AjaxController {
 
 	@ResponseBody
 	@PostMapping("/signup")
-	public void check(Member vo) {
-		System.out.println(vo.getId());
-		System.out.println(vo.getPwd());
-		System.out.println(vo.getName());
+	public Member check(Member vo) {
+		service.register(vo);
+		return vo;
+	}
+	
+	@ResponseBody
+	@PostMapping("/register")
+	public Member register(Member vo) {
+		System.out.println(vo);
+		return vo;
 	}
 	
 	

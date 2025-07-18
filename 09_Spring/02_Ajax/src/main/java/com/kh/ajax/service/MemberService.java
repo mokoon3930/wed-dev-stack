@@ -23,6 +23,12 @@ public class MemberService implements MemberMapper{
 	public boolean idBoolCheck(String id) {
 		return false;
 	}
+
+	@Override
+	public void register(Member vo) {
+		mapper.register(vo);
+		
+	}
 	
 
 	

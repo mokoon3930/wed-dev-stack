@@ -1,2 +1,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.project.erp.mapper.ScheduleMapper"></mapper>
+<mapper namespace="com.project.erp.mapper.ScheduleMapper">
+	<resultMap id="SalaryMap" type="Salary">
+		<id property="saleNo" column="sale_no" />
+		<result property="salaryDate" column="salary_date"/> <!-- 이런식 으로 기제 gpt가 resultMap 만들어줌-->
+		<result property="" column=""/>
+		<result property="" column=""/>
+		<result property="" column=""/>
+		<result property="" column=""/>
+		<result property="" column=""/>
+	</resultMap>
+	
+	<insert id="addSale" parameterType="Salary">
+		INSERT INTO sale(salary_date, base_salary, bonus, overtime, deduction, tax, user_no)
+		VALUES (#{salaryDate}, #{baseSalary}, #{bonus}, #{overtime}. #{deduction}, #{tax}, #{userNo})
+	</insert>
+	
+	<select id="viewSale" resultMap="SalaryMap"> 
+		SELECT * FROM salary
+	</select>
+</mapper>

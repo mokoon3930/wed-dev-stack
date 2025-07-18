@@ -32,6 +32,11 @@ public class PageController {
 		return "/common/layout";
 	}
 	
+	@GetMapping("/register")
+	public String register() {
+		return "/page/register";
+	}
+	
 	
 
 }
