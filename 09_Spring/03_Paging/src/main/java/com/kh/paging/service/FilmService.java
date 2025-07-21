@@ -9,13 +9,12 @@ import com.kh.paging.mapper.FilmMapper;
 import com.kh.paging.model.vo.Film;
 
 @Service
-public class FilmService implements FilmMapper{
+public class FilmService {
 
 	@Autowired
 	private FilmMapper mapper;
 	
-	@Override
-	public List<Film> showFilm() {
+	public List<Film> showFilm(){
 		return mapper.showFilm();
 	}
 	
