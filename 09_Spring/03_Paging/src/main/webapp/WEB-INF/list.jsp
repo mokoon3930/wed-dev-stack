@@ -10,7 +10,7 @@
 </head>
 <body>
 	
-		<!-- localhost:8080/list
+		<!-- localhost:8080/list (요청, 응답을 처리)
 			 스키마 : sakila 
 			 테이블 : film_text 
 			 데이터들 리스트로 가져와서 여기 페이지에 보여주기!
@@ -41,6 +41,19 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			
+			<nav>
+				<ul class="pagination">
+					<li class="page-item ${paging.prev ? '' : 'disabled'}"><a class="page-link" href="/list?page=${paging.startPage - 1}">Previous</a></li>
+								
+					<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="page">
+						<li class="page-item"><a class="page-link ${paging.page == page ? 'active' : ''}" href="/list?page=${page}">${page}</a></li>
+					</c:forEach>
+								
+					<li class="page-item ${paging.next ? '' : 'disabled'}"><a class="page-link" href="/list?page=${paging.endPage + 1}">Next</a></li>
+				</ul>
+			</nav>
+			
 		</div>
 	
 </body>

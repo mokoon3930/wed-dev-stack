@@ -4,10 +4,13 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.kh.paging.model.vo.Film;
+import com.kh.paging.dto.PagingDTO;
+import com.kh.paging.vo.Film;
 
 @Mapper
-public interface FilmMapper {
+public interface FilmMapper { // 구현 시키는 곳이라 interface / class X
 	
-	List<Film> showFilm();
+	List<Film> showFilm(PagingDTO paging);
+	int total();
+	
 }	

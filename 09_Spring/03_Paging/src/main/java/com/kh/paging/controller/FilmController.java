@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.kh.paging.model.vo.Film;
+import com.kh.paging.dto.PagingDTO;
 import com.kh.paging.service.FilmService;
+import com.kh.paging.vo.Film;
 
 @Controller
 public class FilmController {
@@ -18,10 +19,13 @@ public class FilmController {
 	@Autowired
 	private FilmService service;
 	
-	@GetMapping("/")
-	public String showFilm(Model model) {
-		model.addAttribute("list", service.showFilm());
-		return "/list";
+	
+	@GetMapping("/list")
+	public String showFilm(Model model, PagingDTO paging) {
+		List<Film> list = service.showFilm(paging);
+		model.addAttribute("list", list);
+		model.addAttribute("paging", new PagingDTO(paging.getPage(), service.total()));
+		return "list";
 	}
 	
 	
