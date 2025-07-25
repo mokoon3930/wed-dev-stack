@@ -3,14 +3,19 @@ package com.kh.upload.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.kh.paging.dto.PagingDTO;
+import com.kh.paging.vo.Film;
+import com.kh.upload.model.dto.BoardDTO;
 import com.kh.upload.service.BoardService;
 
 @Controller
@@ -78,6 +83,33 @@ public class BoardController {
 		}
 		
 		return "redirect:/";
+	}
+	
+	@GetMapping("/list")
+	public String list() {
+		return "list";
+		
+	}
+	
+	@PostMapping("/write")
+	public String insert(BoardDTO dto, List<MultipartFile> file, Model model) {
+		for(MultipartFile files : file) {
+			UUID uuid = UUID.randomUUID();
+			String fileName = uuid.toString() + "_" +files.getOriginalFilename();
+			
+			File copyFile = new File("\\\\192.168.0.35\\upload\\" + fileName);
+			
+			try {
+				files.transferTo(copyFile);
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+			}
+			List<MultipartFile> list = (List<MultipartFile>) service.selectAll());
+			model.addAttribute("list", list);
+			model.addAttribute("Board", new BoardDTO(BoardDTO.toString(), service.selectAll()));
+			return "list";
+		}
+		return "list";
 	}
 }
 
