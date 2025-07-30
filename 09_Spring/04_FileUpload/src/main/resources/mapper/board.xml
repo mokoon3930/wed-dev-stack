@@ -1,45 +1,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kh.upload.mapper.BoardMapper">
 
-<resultMap id="boardMap" type="Board">
-	<id column="no" property="no"/>
-	<result column="title" property="title"/>
-	<result column="content" property="content"/>
-	<result column="url" property="url"/>
-	<result column="created_at" property="createdAt"/>
-</resultMap>
+	<resultMap id="boardMap" type="Board">
+		<result column="created_at" property="createdAt"/>
+	</resultMap>
 
 	<insert id="insert" parameterType="Board" useGeneratedKeys="true" keyProperty="no" keyColumn="no">
-			INSERT INTO board(title, content, url)
-			VALUES(#{title}, #{content}, #{url})
+		INSERT INTO board(title, content, url)
+		VALUES(#{title}, #{content}, #{url})
 	</insert>
-
+	
 	<select id="selectAll" resultMap="boardMap">
 		SELECT * FROM board
 	</select>
 	
-	<select id="select" parameterType="int" resultMap="boardMap">
+	<select id="select" parameterType="int" resultType="Board">
 		SELECT * FROM board WHERE no = #{no}
 	</select>
 	
-	<update id="update" parameterType="BoardDTO" >
+	<update id="update" parameterType="BoardDTO">
 		UPDATE board
-		<set>
-		<if test="title != null">
-		title=#{title},
-		</if>
-		<if test="content != null">
-	    content=#{content},
-		</if>
-		<if test="url != null">
-		url=#{url}
-		</if>
-		</set>
+		SET title=#{title}, content=#{content}, url=#{url}
 		WHERE no = #{no}
 	</update>
 	
 	<delete id="delete" parameterType="int">
 		DELETE FROM board
-		WHERE no = #{no}
+		WHERE no = #{no}	
 	</delete>
+
 </mapper>

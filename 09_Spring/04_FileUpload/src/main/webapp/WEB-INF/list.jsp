@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,20 +15,21 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 		<h1>List Page</h1>
 		<table class="table">
 			<thead>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성시간</th>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성시간</th>
+				</tr>
 			</thead>
 			<tbody>
 				<!-- 리스트 list 가져다가 뿌리시면 돼요! -->
-				<c:forEach items="${list}" var="item">
-						<tr>
-							<td>${item.no}</td>
-							<td><a href="/view?no=${item.no}">${item.title}</td>
-							<td><fmt:formatDate value="${item.formatDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-						</tr>
+				<c:forEach items="${list}" var="board">
+					<tr>
+						<td>${board.no}</td>
+						<td><a href="/view?no=${board.no}">${board.title}</a></td>
+						<td><fmt:formatDate value="${board.formatDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+					</tr>
 				</c:forEach>
-				
 			</tbody>
 		</table>
 		<button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#writeModal">글 추가</button>
