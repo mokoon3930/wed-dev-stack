@@ -15,10 +15,31 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	<!-- a링크를 통해 해당 정보만 나올수 있도록! 상세보기 -->
 	
 	<div class="container">
-		<h1>${board.title}</h1>
-		<p>${board.content}</p>
-		<img src="http://192.168.0.35:8081/${board.url}"/></p>
-	
+		<h1>게시물 정보</h1>
+		<form action="/update" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="no" value="${board.no}"/>
+			<inupt type="hidden" name="url" value="${board.url}" width="200"/>
+			<div class="form-group">
+				<label>Title</label>
+				<input calss="form-control" name="title" value="${board.title}"/>
+			</div>
+			<div class="form-group">
+				<label>Content</label>
+				<textarea calss="form-control" name="content">
+					${board.content}
+				</textarea>	
+			</div>
+						<!-- 수정시 file이 있다면 기존 파일은 삭제 하고 새로 추가된 파일로 업로드 DB 수정
+								(파일 삭제 : File 객체의 delete() 메서드 사용
+						-->
+			<img src="http://192.168.0.35:8081/${board.url}"/>
+			<div class="form-group">
+				<label>Update File</label>
+				<input calss="form-control" name="file" type="file" accept="image/*"/>
+			</div>
+			<button type="submit" class="btn btn-outline-warning">수정</button>
+			<a class="btn btn-outline-danger" href="/delete?no=${board.no}">삭제</a>
+		</form>	
 	</div>
 </body>
 </html>

@@ -17,12 +17,15 @@ import org.springframework.web.multipart.MultipartFile;
 import com.kh.upload.model.dto.BoardDTO;
 import com.kh.upload.model.vo.Board;
 import com.kh.upload.service.BoardService;
+import com.mysql.cj.x.protobuf.MysqlxCrud.Delete;
 
 @Controller
 public class BoardController {
 
     private final CustomErrorController customErrorController;
 
+    
+    private String path = "\\\\192.168.0.35\\upload\\";
     
     @Autowired
     private BoardService service;
@@ -70,7 +73,7 @@ public class BoardController {
 			UUID uuid = UUID.randomUUID();
 			String fileName = uuid.toString() + "_" +files.getOriginalFilename();
 			
-			File copyFile = new File("\\\\192.168.0.35\\upload\\" + fileName);
+			File copyFile = new File(path);
 			
 			try {
 				files.transferTo(copyFile);
@@ -123,6 +126,43 @@ public class BoardController {
 		
 		return "view";
 	}
+	
+	@PostMapping("/update")
+	public String update(int no, BoardDTO dto) {
+		// 새로운 파일로 수정 -> 기존 파일 삭제 해당 파일 업로드 DB URL을 수정
+		
+		if(!dto.getFile().isEmpty()) {
+			// 1. 파일이 비어있지 않다면 기존 파일 삭제  (아니면 기존 url이 들어가 있을 것이다.)
+			File file = new File(path + dto.getUrl());
+			file.delete();
+			
+			// 2. 해당 파일 업로드 -> 새로운 파일의 url의 파일명
+			String url = fileUpload(dto.getFile());
+			dto.setUrl(url);
+		}
+		
+		
+		// 3. 해당 no에 따른 데이터들 수정
+		service.update(dto);
+		return "redirect:/view?"+dto.getNo();
+		
+	}
+	
+	@GetMapping("/delete")
+	public String delete(int no) {
+		// 이미지가 있는 경우 삭제를 해야 하지 않을 까요?
+		// -> 기존 url 컬럼에 값이 필요하지 않을까?
+		// -> no로 하나 정보를 가지고 오는 기능 만들어 놓지 않았나요?
+		Board board = service.select(no);
+		
+		File file = new File(path + board.getUrl());
+		file.delete();
+		
+		service.delete(no);
+		return "redirect:/list";
+	}
+	
+	
 }
 
 

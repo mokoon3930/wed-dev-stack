@@ -43,11 +43,9 @@ public class BoardService {
 	public Board select(int no) {
 		return mapper.select(no);
 	}
-
 	
-	public void update(Board vo) {
-		mapper.update(vo);
-		
+	public void update(BoardDTO dto) {
+		mapper.update(dto);
 	}
 
 	
