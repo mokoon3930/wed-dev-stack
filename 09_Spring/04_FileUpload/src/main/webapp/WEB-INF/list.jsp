@@ -13,6 +13,11 @@
 <body>
 	<div class="container">
 		<h1>List Page</h1>
+		<form action="/list">		
+				<input type="text" name="keyword" value="${param.keyword}">
+				<input type="submit" value="검색">
+		</form>
+		
 		<table class="table">
 			<thead>
 				<tr>
@@ -32,6 +37,19 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		
+		<nav>
+			<ul class="pagination">
+				<li class="page-item ${paging.prev ? '' : 'disabled'}"><a class="page-link" href="/list?page=${paging.startPage - 1}&keyword=${param.keyword}">Previous</a></li>
+										
+				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="page">
+				<li class="page-item"><a class="page-link ${paging.page == page ? 'active' : ''}" href="/list?page=${page}&keyword=${param.keyword}">${page}</a></li>
+				</c:forEach>
+										
+				<li class="page-item ${paging.next ? '' : 'disabled'}"><a class="page-link" href="/list?page=${paging.endPage + 1}&keyword=${param.keyword}">Next</a></li>
+			</ul>
+		</nav>
+		
 		<button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#writeModal">글 추가</button>
 
 		<!-- Modal -->

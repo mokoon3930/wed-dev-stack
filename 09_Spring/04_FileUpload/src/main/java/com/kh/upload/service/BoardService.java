@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kh.upload.model.dto.PagingDTO;
 import com.kh.upload.mapper.BoardMapper;
 import com.kh.upload.model.dto.BoardDTO;
 import com.kh.upload.model.vo.Board;
@@ -21,12 +22,13 @@ public class BoardService {
 	
 	public void insert(Board vo) {
 		mapper.insert(vo);
-	
 	}
 
-	
-	public List<BoardDTO> selectAll() {
-		List<Board> list = mapper.selectAll();
+	public List<BoardDTO> selectAll(com.kh.upload.model.dto.PagingDTO paging) {
+		
+		paging.setOffset(paging.getLimit() * (paging.getPage() - 1));
+		List<Board>list = mapper.selectAll(paging);
+		
 		List<BoardDTO> dtoList = new ArrayList<BoardDTO>();
 		for(Board b : list) {
 			BoardDTO dto = new BoardDTO();
@@ -52,6 +54,10 @@ public class BoardService {
 	public void delete(int no) {
 		mapper.delete(no);
 		
+	}
+	
+	public int total(String keyword) {
+		return mapper.total(keyword);
 	}
 
 }

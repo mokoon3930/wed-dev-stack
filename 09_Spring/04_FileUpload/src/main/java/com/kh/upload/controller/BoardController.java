@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.kh.upload.model.dto.PagingDTO;
 import com.kh.upload.model.dto.BoardDTO;
 import com.kh.upload.model.vo.Board;
 import com.kh.upload.service.BoardService;
@@ -66,9 +67,11 @@ public class BoardController {
 	}
 	
 	@GetMapping("/list")
-	public String list(Model model) {
-		List<BoardDTO> list = service.selectAll();
+	public String list(Model model, PagingDTO paging) {
+		System.out.println("keyword : " + paging.getKeyword());
+		List<BoardDTO> list = service.selectAll(paging);
 		model.addAttribute("list", list);
+		model.addAttribute("paging", new PagingDTO(paging.getPage(), service.total(paging.getKeyword())));
 		return "list";
 	}
 	
