@@ -8,6 +8,12 @@
 	<title>회원가입</title>
 </head>
 <body>
-	<div>회원가입 페이지</div>
+	<h1>회원가입 페이지</h1>
+	<form action="/register" method="post">
+		아이디 :<input type="text" name="id"></br>
+		비밀번호 :<input type="text" name="pwd"></br>
+		이름 :<input type="text" name="name"></br>
+		<button type="submit">회원가입</button>
+	</form>
 </body>
 </html>
