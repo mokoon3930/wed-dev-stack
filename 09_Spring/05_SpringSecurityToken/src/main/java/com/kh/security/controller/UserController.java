@@ -43,6 +43,13 @@ public class UserController {
 		
 	}
 	
+	@ResponseBody
+	@GetMapping("/check")
+	public User check(String token) {
+		System.out.println("token : " + token);
+		return tokenProvider.validate(token);
+	}
+	
 	
 	
 	

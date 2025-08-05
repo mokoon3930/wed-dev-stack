@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import com.kh.security.vo.User;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -43,9 +42,9 @@ public class TokenProvider {
 				.parseClaimsJwt(token)
 				.getBody();
 		return User.builder()
-				.id((String)claims.get("id"))
-				.name((String)claims.get("name"))
-				.role((String)claims.get("role"))
+				.id((String) claims.get("id"))
+				.name((String) claims.get("name"))
+				.role((String) claims.get("role"))
 				.build();
 	}
 	
