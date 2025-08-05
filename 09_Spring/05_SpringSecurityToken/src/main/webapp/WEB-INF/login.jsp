@@ -31,9 +31,6 @@
 						localStorage.setItem('token', data);
 						// / <- index.jsp로 이동
 						location.href = "/";
-					},
-					error:function(xhr, status, error){
-				
 					}
 				});
 			});

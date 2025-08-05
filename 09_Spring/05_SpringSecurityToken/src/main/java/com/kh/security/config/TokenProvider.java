@@ -39,7 +39,7 @@ public class TokenProvider {
 				.parserBuilder()
 				.setSigningKey(secretKey)
 				.build()
-				.parseClaimsJwt(token)
+				.parseClaimsJws(token)          // Jws는 서명이 있는 것만 처리 / Jwt는 서명이 없는 것을 처리
 				.getBody();
 		return User.builder()
 				.id((String) claims.get("id"))
