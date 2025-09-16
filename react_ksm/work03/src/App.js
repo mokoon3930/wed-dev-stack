@@ -26,7 +26,8 @@ function App() {
       >
         +
       </button>
-      <input type="text">{num}</input>
+      <input type="text" onChange={changeNum} />
+
       <samp>{num}</samp>
     </div>
   );
