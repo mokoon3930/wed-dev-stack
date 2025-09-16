@@ -47,7 +47,7 @@ function App() {
           고강도 운동
         </button>
       </div>
-      {/* selected에 값이 있을 때만 div를 생성 */}
+      {/* selected에 값이 있을 때만 div를 생성 // selected 에 값이 있을 때만 () 값 실행*/}
       {selected && (
         <div>
           <h3>{selected.title}</h3>
