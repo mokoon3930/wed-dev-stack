@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 
 function App() {
   let [greet, setGreet] = useState("");
+  let [msg, setMsg] = useState("");
 
   function nameChange(e) {
     e.preventDefault();
@@ -10,6 +11,19 @@ function App() {
     let name = e.target.myname.value;
 
     setGreet("안녕하세요" + name + "님, 오늘의 기분은?");
+  }
+
+  function moodChange(e) {
+    let mood = e.target.value;
+    if (mood === "행복") {
+      setMsg("행복 하군요");
+    } else if (mood === "슬픔") {
+      setMsg("ㅠㅠ");
+    } else if (mood === "화남") {
+      setMsg("화가 나내요");
+    } else {
+      setMsg();
+    }
   }
 
   return (
@@ -26,40 +40,27 @@ function App() {
 
       <p>{greet}</p>
 
-      <MyMood></MyMood>
-      {/*기분을 선택하는 select 태그*/}
+      <MyMood mood={moodChange}></MyMood>
+
+      <p>{msg}</p>
 
       <br />
     </div>
   );
 }
 
-function MyMood(props) {
-  let [msg, setMsg] = useState("");
-
-  function moodChange(e) {
-    let mood = e.target.value;
-    if (mood === "행복") {
-      setMsg("행복 하군요");
-    } else if (mood === "슬픔") {
-      setMsg("ㅠㅠ");
-    } else if (mood === "화남") {
-      setMsg("화가 나내요");
-    } else {
-      setMsg();
-    }
+function MyMood({ mood }) {
+  {
+    /*기분을 선택하는 select 태그*/
   }
-
   return (
     <div>
-      <select onChange={moodChange}>
+      <select onChange={mood}>
         <option>기분을 선택 하세요</option>
         <option value="행복">행복</option>
         <option value="슬픔">슬픔</option>
         <option value="화남">화남</option>
       </select>
-
-      <p>{msg}</p>
     </div>
   );
 }
