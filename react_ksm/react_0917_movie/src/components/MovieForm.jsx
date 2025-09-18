@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import InputField from "./inputField";
+import InputField from "./InputField";
 
 const MovieForm = ({ addMovie }) => {
   const [movieTitle, setMovieTitle] = useState("");
