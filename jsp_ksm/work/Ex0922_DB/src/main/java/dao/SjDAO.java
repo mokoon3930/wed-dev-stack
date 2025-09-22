@@ -35,4 +35,42 @@ public class SjDAO {
 		
 		return list;
 	}
+	
+	// 학생정보 등록
+	public int register(SjVO vo) {
+		SqlSession sqlSession = factory.openSession(true);
+		int res = sqlSession.insert("s.sj_insert", vo);  // "호출mapper" , vo 정보 보네기 (따로 보네는 X)
+		sqlSession.close();
+		return res;
+		
+	}
+	
+	// 학생정보 삭제
+	public int del( int no ) {
+		SqlSession sqlSession = factory.openSession(true);
+		
+		//삭제를 위한 mapper
+		int res = sqlSession.delete("s.sj_del", no);
+		
+		sqlSession.close();
+		return res;
+		
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

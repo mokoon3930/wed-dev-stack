@@ -7,7 +7,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="sj_list" resultType="vo.SjVO">
 		select * from sungtb
 	</select>
- 
+ 	
+ 	<insert id="sj_insert" parameterType="vo.SjVO">
+ 		insert into sungtb values( seq_sungtb_no.nextVal, #{name}, #{kor}, #{eng}, #{mat} )
+ 	</insert>
+ 	
+ 	<delete id="sj_del" parameterType="int">
+ 		delete from sungtb where no = #{no}
+ 	</delete>
   
 
 </mapper>
