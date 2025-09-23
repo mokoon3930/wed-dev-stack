@@ -11,6 +11,9 @@
 </head>
 <body>
 	<table border="1">
+		
+		<caption>부서목록</caption>
+	
 		<tr>
 			<th>부서번호</th>
 			<th>부서이름</th>
@@ -24,7 +27,8 @@
 				<td>${vo.dname}</td>
 				<td>${vo.loc}</td>
 				<td>
-					<input type="button" value="삭제" onclick="location.href='sh_del.do?no=${vo.no}'">
+					<input type="button" value="수정" onclick="location.href='dept_modify.do?deptno=${vo.deptno}'">
+					<input type="button" value="삭제" onclick="location.href='dept_del.do?deptno=${vo.deptno}'">
 				</td>
 			</tr>
 		</c:forEach>

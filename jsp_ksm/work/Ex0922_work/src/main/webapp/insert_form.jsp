@@ -10,9 +10,12 @@
 		function send( f ){
 			
 			// 유효서 체크
-			let name = f.name.value;
-			if( name == ''){
-				alert("이름을 입력하세요")
+			let deptno = f.deptno.value;
+			
+			let patt = /^[0-9]*$/;
+			
+			if( !patt.test( deptno ) || deptno == ''){
+				alert("부서 번호는 정수로 입력 하세요")
 				return;
 			}
 			
@@ -42,7 +45,7 @@
 			
 			<tr>
 				<td colspan="2">
-					<input type="button" value="확인" onclick="send(this.form);">
+					<input type="button" value="추가" onclick="send(this.form);">
 				</td>
 			</tr>
 		</table>

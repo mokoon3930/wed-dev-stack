@@ -1,5 +1,5 @@
 import React from "react";
-
+// 회원가입 입력 values -> props로 name, email, password 받음
 function LoginValidation(props) {
   if (props.name == "") {
     alert("이름을 입력하세요");

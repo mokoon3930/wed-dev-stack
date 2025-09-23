@@ -16,6 +16,7 @@ const db = mysql.createConnection({
 
 // DB 접속 및 쿼리 요청
 app.post("/signup", (req, res) => {
+  // DB sql insert문 작성
   const sql = "insert into login (`name`,`email`,`password`) values (?)";
 
   const values = [req.body.name, req.body.email, req.body.password];
@@ -30,6 +31,7 @@ app.post("/signup", (req, res) => {
 
 // 로그인 요청
 app.post("/login", (req, res) => {
+  // DB sql select문 작성
   const sql = "select * from login where `email` =? and `password` =?";
 
   const values = [req.body.email, req.body.password];
@@ -47,6 +49,7 @@ app.post("/login", (req, res) => {
   });
 });
 
+// DB에 연결이 잘 되었을 경우 콘솔창에 listening 나옴 (backend 에서 npm start)
 app.listen(3000, () => {
   console.log("listening");
 });

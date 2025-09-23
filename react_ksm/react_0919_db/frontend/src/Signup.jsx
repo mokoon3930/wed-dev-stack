@@ -9,6 +9,7 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // values -> props로 받음
     setErrors(LoginValidation(values));
 
     axios.post("http://localhost:3000/signup", values).then((res) => {

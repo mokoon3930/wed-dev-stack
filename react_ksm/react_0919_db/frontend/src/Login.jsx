@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// <Link   to= />를 사용을 해서 패이지 이동
 import { Link } from "react-router-dom";
 import LoginValidation from "./LoginValidation";
 import axios from "axios";
@@ -11,6 +12,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(LoginValidation(values));
+    // axios를 사용을 해서 서버 요청
     axios.post("http://localhost:3000/login", values).then((res) => {
       if (res.data == "success") {
         window.location.href = "/main_content";
@@ -21,6 +23,7 @@ function Login() {
   };
 
   const handleInput = (e) => {
+    // 원래 들어가 있는 값을 조회를 하고 입력받는 값을 확인
     setValues({ ...values, [e.target.name]: [e.target.value] });
   };
 

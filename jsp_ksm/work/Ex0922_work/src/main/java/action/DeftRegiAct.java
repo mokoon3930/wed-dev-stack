@@ -16,7 +16,7 @@ import vo.DpVO;
  * Servlet implementation class deftRegiAct
  */
 @WebServlet("/dept_register.do")
-public class deftRegiAct extends HttpServlet {
+public class DeftRegiAct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -31,7 +31,7 @@ public class deftRegiAct extends HttpServlet {
 		System.out.println(loc);
 		
 		DpVO vo = new DpVO();
-		vo.setDrptno(deptno);
+		vo.setDeptno(deptno);
 		vo.setDname(dname);
 		vo.setLoc(loc);
 		
@@ -40,7 +40,7 @@ public class deftRegiAct extends HttpServlet {
 		DpDAO.getInstance().register(vo);
 		
 		// return "redirect:list.do";
-		response.sendRedirect("list.do");
+		response.sendRedirect("dept_list.do");
 	}
 
 }
