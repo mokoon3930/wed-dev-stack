@@ -10,7 +10,7 @@ function Login() {
   const [errors, setErrors] = useState();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //원래 기능 막기
     setErrors(LoginValidation(values));
     // axios를 사용을 해서 서버 요청
     axios.post("http://localhost:3000/login", values).then((res) => {
@@ -30,11 +30,13 @@ function Login() {
   return (
     <div className="d-flex justify-content-center align-items-center bg-primary vh-100">
       <div className="bg-white p-3 rounded w-25">
+        {/* form데이터가 전송이 될때 동작 onSubmit*/}
         <form action="" onSubmit={handleSubmit}>
           <div className="mb-3">
             <label>Email</label>
             <input
               placeholder="enter email"
+              /* 값이 변화가 있을때 동작 onChange*/
               onChange={handleInput}
               name="email"
             />
