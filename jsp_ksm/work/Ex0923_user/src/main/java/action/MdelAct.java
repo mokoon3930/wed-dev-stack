@@ -26,7 +26,7 @@ public class MdelAct extends HttpServlet {
 			param = "yes";
 		}
 		System.out.println(param);
-		String resultStr = String.format("[{'res':'%s'}]", param);
+		String resultStr = String.format("[{'res':'%s'}]", param); // "[{\"res\":\"%s\"}]"
 		response.getWriter().println(resultStr);
 		
 		//response.sendRedirect("list.do");
