@@ -21,10 +21,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		select * from member where idx=#{idx}
  	</select>
  	
- 	<update id="update_member" parameterType="java.util.Map">
+ 	<update id="update_member" parameterType="vo.MemberVo">
  		update member set name=#{name}, id=#{id}, pwd=#{pwd}, email=#{email}, addr=#{addr}
- 		where idx=#{ori_idx}
+ 		where idx=#{idx}
  	</update>
+ 	
+ 	<select id="selectOne" resultType="vo.MemberVo" parameterType="String">
+ 		select * from member where id=#{id}
+ 	</select>
 
 </mapper>
 

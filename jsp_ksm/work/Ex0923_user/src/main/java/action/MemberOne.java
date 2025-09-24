@@ -26,8 +26,9 @@ public class MemberOne extends HttpServlet {
 		MemberVo vo = MemberDao.getInstance().memberOne(idx);
 	
 		
-		request.setAttribute("vo", vo);
+		request.setAttribute("vo", vo); // 바인딩
 		
+		// 포워딩
 		RequestDispatcher disp = request.getRequestDispatcher("update_form.jsp");
 		disp.forward(request, response);
 	}

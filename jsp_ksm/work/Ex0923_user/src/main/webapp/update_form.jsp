@@ -12,7 +12,8 @@
 	<script>
 		function update(f) {
 			
-			f.action ="member_update.do"
+			f.action = "member_update.do";
+			f.method = "post"
 			f.submit();
 			
 		}
@@ -24,7 +25,7 @@
 	
 	<form>
 		
-		<input type="hidden" value="${vo.idx}" name="ori_idx">
+		<input type="hidden" value="${vo.idx}" name="idx">
 	
 		<table border="1">
 			<caption>회원 정보 수정</caption>
@@ -39,7 +40,7 @@
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input name="pwd" value="${vo.pwd}"></td>
+				<td><input name="pwd" type="password" value="${vo.pwd}"></td>
 			</tr>
 			<tr>
 				<th>이메일</th>
@@ -52,9 +53,9 @@
 			
 			
 			<tr>
-			<td colspan="2">
-				<input type="button" value="수정" onclick="update(this.form)">
-			</td>
+				<td colspan="2">
+					<input type="button" value="수정" onclick="update(this.form)">
+				</td>
 			</tr>
 	
 		</table>

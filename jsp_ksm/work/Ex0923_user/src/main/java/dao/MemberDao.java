@@ -56,7 +56,7 @@ public class MemberDao {
 			
 		}
 		
-		// 수정 목로 1개 조회
+		// 수정 할 회원 1개 조회
 		public MemberVo memberOne (int idx) {
 			SqlSession sqlSession = factory.openSession();
 			
@@ -68,11 +68,21 @@ public class MemberDao {
 			
 		}
 		
-		public int memberUpdate (Map<String, Object>map) {
+		public int memberUpdate (MemberVo vo) { // Map<String, Object>map
 			SqlSession sqlSession = factory.openSession(true);
-			int res = sqlSession.update("m.update_member" , map);
+			int res = sqlSession.update("m.update_member" , vo);  // map
 			sqlSession.close();
 			return res;
+			
+		}
+		
+		//아이디 주복 체크
+		public MemberVo selectOne (String id) {
+			SqlSession sqlSession = factory.openSession();
+			MemberVo vo = sqlSession.selectOne("m.selectOne", id);
+			sqlSession.close();
+			return vo;
+			
 			
 		}
 		

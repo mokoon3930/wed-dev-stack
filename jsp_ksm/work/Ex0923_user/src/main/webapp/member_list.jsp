@@ -10,16 +10,40 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<script src="js/httpRequest.js">
+	
+</script>
+
+
 <script>
 	function del( idx ) {
 		
 		if( !confirm("정말로 삭제를 하실 건가여?" )){
 			return;
 		}
+		//location.href="member_del.do?idx="+idx;
+		let url = "member_del.do";
+		let param ="idx="+ encodeURIComponent(idx); // 특수문자 param 을 보넬떼 깨질경우 인코딩
+		sendRequest(url, param, resDel, "post");
+	}
+	
+	function resDel(){
 		
-		location.href="member_del.do?idx="+idx;
+		if(xhr.readyState == 4 && xhr.status == 200){
+			
+			let data = xhr.responseText;
+			
+			let json = eval(data);
+			if(json[0].res == 'yes'){
+				alert('삭제 성공');
+				location.href='list.do';
+			}else{
+				alert('삭제 실패');
+			}
+		}
 		
 	}
+	
 </script>
 
 </head>

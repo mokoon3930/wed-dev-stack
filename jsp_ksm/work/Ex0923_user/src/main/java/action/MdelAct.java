@@ -19,9 +19,17 @@ public class MdelAct extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		
-		MemberDao.getInstance().deleteMember( idx );
+		int res = MemberDao.getInstance().deleteMember( idx );
 		
-		response.sendRedirect("list.do");
+		String param ="no";
+		if ( res > 0 ) {
+			param = "yes";
+		}
+		System.out.println(param);
+		String resultStr = String.format("[{'res':'%s'}]", param);
+		response.getWriter().println(resultStr);
+		
+		//response.sendRedirect("list.do");
 	}
 
 }

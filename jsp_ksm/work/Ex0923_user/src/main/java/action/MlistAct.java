@@ -28,6 +28,7 @@ public class MlistAct extends HttpServlet {
 		
 		//전체 회원 목록 바인딩 (list 저장)
 		request.setAttribute("list", list);
+		
 	
 		//포워딩 (list에 저장된 정보를 사용을 할 jsp)
 		RequestDispatcher disp = request.getRequestDispatcher("member_list.jsp");
