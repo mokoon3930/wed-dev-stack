@@ -27,7 +27,6 @@ public class LoginAct extends HttpServlet {
 		
 		MemberVO vo = MemberDAO.getInstance().selectOne(id);
 
-		
 		String param = "";
 		String resultStr = "";
 		
