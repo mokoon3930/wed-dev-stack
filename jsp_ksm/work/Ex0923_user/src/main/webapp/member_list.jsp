@@ -33,7 +33,7 @@
 			
 			let data = xhr.responseText;
 			
-			let json = eval(data);
+			let json = eval(data);                 // JSON.parse
 			if(json[0].res == 'yes'){
 				alert('삭제 성공');
 				location.href='list.do';
