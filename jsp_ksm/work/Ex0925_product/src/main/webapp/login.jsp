@@ -5,9 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<script src="js/httpRequest.js"></script>
-	
-	<script>
+
+<script src="js/httpRequest.js"></script>
+
+<script>
 		function send(f) {
 			let id = f.id.value.trim();
 			let pwd = f.pwd.value.trim();
@@ -31,16 +32,16 @@
 					alert("비밀번호가 일치하지 않습니다!")
 				}else{
 					//로그인 성공시
-					location.href="main_content.jsp";
+					location.href="index.jsp";
 				}
 				
 			}
 		}
 	
 	</script>
+
 </head>
 <body>
-
 	<form>
 		<table border="1">
 			<caption>로그인</caption>
@@ -66,6 +67,5 @@
 			</tr>
 		</table>
 	</form>
-	
 </body>
 </html>

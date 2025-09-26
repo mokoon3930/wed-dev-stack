@@ -21,7 +21,7 @@
 	
 	<form method="post" enctype="multipart/form-data">
 	
-	<input type="hidden" value="${vo.idx}" name="ori_idx">
+	<input type="hidden" value="${vo.idx}" name="idx">
 	
 	<table border="1" align="center" width="600">
 		

@@ -57,7 +57,8 @@ public class ProductModify extends HttpServlet {
 		vo.setP_image_s(p_image_s);
 		vo.setP_image_l(p_image_l);
 		
-		ProductDAO.getInstance().modfiy(idx);
+		
+		ProductDAO.getInstance().update(vo);
 		
 		response.sendRedirect("list.do?category="+category);
 	}

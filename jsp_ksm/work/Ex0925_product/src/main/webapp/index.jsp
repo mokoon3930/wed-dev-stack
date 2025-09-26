@@ -27,8 +27,12 @@
 		<a href="list.do?category=com001">컴퓨터</a>
 		<a href="list.do?category=ele002">생활가전</a>
 		<a href="list.do?category=sp003">스포츠용품</a>
+		<br>
+		<input type="button" value="로그인" onclick="location.href='login.jsp'">
 	</center>
 	
 	<hr width="600" border="1" noshade color="navy">
+	
+	
 </body>
 </html>
