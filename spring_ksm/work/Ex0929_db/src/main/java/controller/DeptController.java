@@ -25,4 +25,12 @@ class DeptController {
 		return "dept_list";
 		
 	}
-}
+	
+	@RequestMapping("dept_modify.do")
+	public String deptOne(int deptno Model model) {
+		DeptVO vo = dept_dao.modifyDept(deptno);
+	}
+	
+	}
+	
+

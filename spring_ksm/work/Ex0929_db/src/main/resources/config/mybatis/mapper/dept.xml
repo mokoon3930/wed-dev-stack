@@ -8,7 +8,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from dept
 	</select>
 	
-
+	<select id="modify_one" resultType="vo.DeptVO" parameterType="int">
+		select * from dept where deptno=#{deptno}
+	</select>
 
 </mapper>
 

@@ -19,4 +19,10 @@ public class DeptDAO {
 		List<DeptVO> list = sqlSession.selectList("d.dept_list");
 		return list;
 	}
+	
+	// 수정 목로 1개 조회
+	public DeptVO modifyDept (int deptno) {
+		DeptVO vo = sqlSession.selectOne("d.modify_one", deptno);
+		return vo;
+	}
 }
