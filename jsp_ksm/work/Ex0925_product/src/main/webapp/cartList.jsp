@@ -9,10 +9,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script>
+
+	function modify(f) {
+		
+		let c_cnt = f.c_cnt.value;
+		
+		let patt = /^[0-9]*$/;
+		if( !patt.test(c_cnt) || c_cnt == '' || c_cnt == 0 ){
+			alert("수량은 정수로 입력하세요");
+			return;
+		}
+		
+		f.action = "cart_update.do";
+		f.submit();
+		
+	}
+	
+function del(c_idx){
+		
+		if(!confirm("정말 삭제하시겠습니까?")){
+			return;
+		}
+		
+		location.href="cart_delete.do?c_idx=" +c_idx;
+	}
+
+</script>
+
 </head>
 <body>
-	<jsp:include page="index.jsp"></jsp:include>
 	
+	<jsp:include page="index.jsp"></jsp:include>
 	
 	<table align="center" border="1" width="600">
 		<tr bgcolor="#dedede">
@@ -39,18 +68,19 @@
 			</td>
 			
 			<td>
-				<from>
-					<input type="hidden">
-					<input size="3" value="${vo.c_cnt}"><br>
-					<input type="submit" value="수정">
-				</from>
+				<form>
+					<input type="hidden" name="c_idx" value="${vo.c_idx}">
+					<input size="3" value="${vo.c_cnt}" name="c_cnt"><br>
+					<input type="button" value="수정"
+						onclick="modify(this.form)">
+				</form>
 				
 			</td>
 			
 			<td>${vo.c_cnt * vo.p_saleprice}</td>
 			
 			<td>
-				<input type="button" value="삭제">
+				<input type="button" value="삭제" onClick="del(${vo.c_idx})">
 			</td>
 			
 		</tr>

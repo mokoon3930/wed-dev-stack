@@ -25,6 +25,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into cart values(seq_cart_idx.nextVal, 1, #{idx}, #{m_idx})
 	</insert>
 	
+	<!-- 카트 상품 수량 수정 -->
+	<update id="cart_cnt" parameterType="cart">
+		update cart set c_cnt=#{c_cnt} where c_idx=#{c_idx}
+	</update>
+	
+	<!-- 카트 상품 삭제 -->
+	<delete id="cart_del" parameterType="int">
+		delete from cart where c_idx=#{c_idx}
+	</delete>	
+	
 </mapper>
 
 

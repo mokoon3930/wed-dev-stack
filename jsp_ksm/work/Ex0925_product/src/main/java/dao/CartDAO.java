@@ -62,6 +62,23 @@ public class CartDAO {
 		sqlSession.close();
 		return res;
 	}
+	
+	//장바구니 수량 업데이트
+	public int update_cnt(CartVO vo) {
+		SqlSession sqlSession = factory.openSession(true);
+		int res = sqlSession.update("c.cart_cnt", vo);
+		sqlSession.clearCache();
+		
+		return res;
+	}
+	
+	//장바구니 목록 삭제
+	public int delete(int c_idx) {
+		SqlSession sqlSession = factory.openSession(true);
+		int res = sqlSession.delete("c.cart_del", c_idx);
+		sqlSession.close();
+		return res;
+	}
 }
 
 
