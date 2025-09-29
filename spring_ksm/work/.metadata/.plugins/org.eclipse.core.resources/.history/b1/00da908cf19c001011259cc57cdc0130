@@ -1,0 +1,19 @@
+package dao;
+
+import java.util.List;
+
+public class BoardDaoImpl implements BoardDAO{
+
+	// 자식(BoardDaoImpl) 부모 추상 method에서 내용 넣기
+	
+	@Override
+	public int insert(Object ob) {
+		return 0;
+	}
+
+	@Override
+	public List selectList() {
+		return null;
+	}
+
+}
