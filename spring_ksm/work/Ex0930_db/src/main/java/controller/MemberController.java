@@ -24,7 +24,8 @@ public class MemberController {
 		this.member_dao = member_dao;
 	}
 	
-	@RequestMapping("list.do")
+	//value = {"/","list.do"} - 경로가 있던 없던 요기 먼저 실행
+	@RequestMapping(value= {"/", "list.do"})
 	public String list(Model model) {
 		List<MemberVO> list = member_dao.selectList();
 		model.addAttribute("list", list); // 바인딩
@@ -91,6 +92,7 @@ public class MemberController {
 		
 		int res = member_dao.memberUpdate(vo);
 		
+		//수정 항목을 갱신
 		return "redirect:list.do";
 	}
 	

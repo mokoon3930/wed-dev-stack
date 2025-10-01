@@ -14,7 +14,7 @@
 	<script src="/member/resources/js/httpRequest.js"></script>
 
 <script>
-		function out(idx) {
+		 function out(idx) {
 			
 			if(!confirm('정말 삭제를 하시겠어요?')){
 				return;
@@ -23,7 +23,7 @@
 			let url = "del_member.do";
 			let param = "idx="+idx;
 			sendRequest (url, param, deleteFn, "post");
-		}
+		} 
 		
 		
 		
@@ -40,6 +40,10 @@
 				}
 			}
 			}
+		
+		function modify(idx){
+			location.href ="member_select_form.do?idx="+idx;
+		} 
 	
 </script>	
 
@@ -66,7 +70,8 @@
 				<td>${vo.email}</td>
 				<td>${vo.addr}</td>
 				<td>
-					<input type="button" value="수정" onclick="location.href='member_select_form.do?idx=${vo.idx}'"/>
+					<%-- <input type="button" value="수정" onclick="location.href='member_select_form.do?idx=${vo.idx}'"/> --%>
+					<input type="button" value="수정" onclick="modify('${vo.idx}')"/>
 					<input type="button" value="삭제" onclick="out('${vo.idx}')"/> 				
 				</td>
 				

@@ -11,7 +11,16 @@
 	
 	<script>
 	
+	
+	
+	
 		function update(f){
+			
+			if(f.pwd.value.trim() == ''){
+				alert("비밀번호는 필수에요");
+				return;
+			}
+			
 			f.action = "member_update.do"
 			f.method = "post"
 			f.submit();
@@ -53,6 +62,7 @@
 			<tr>
 				<td colspan="2">
 					<input type="button" value="수정" onclick="update(this.form)">
+					<input type="button" value="취소" onclick="history.back()">
 				</td>
 			</tr>
 	

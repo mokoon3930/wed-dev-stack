@@ -46,7 +46,7 @@ public class MemberDAO {
 		return res;
 	}
 	
-	//유저 1명 검색
+	//수정 하고픈 유저 1명 검색
 	public MemberVO selectOne(int idx) {
 		MemberVO vo = sqlSession.selectOne("m.sel_member", idx);
 		return vo;

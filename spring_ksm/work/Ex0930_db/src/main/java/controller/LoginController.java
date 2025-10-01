@@ -17,8 +17,8 @@ public class LoginController {
 	}
 	
 	
-	//value = {"/","list.do"} - 경로가 있던 없던 요기 먼저 실행
-	@RequestMapping(value = {"/","/login.do"})
+	
+	@RequestMapping("/login.do")
 	public String loginForm() {
 		return "login/login_form";
 	}
