@@ -3,6 +3,11 @@ package controller;
 
 import java.util.List;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +19,16 @@ import vo.VisitVO;
 
 @Controller
 public class VisitController {
+	
+	//  HttpServletRequest request 메모리 할당 자동으로
+	@Autowired
+	HttpServletRequest request;
+	
+	/*
+	 * @Autowired ServletContext app; //프로젝트 정보를 가지는 객체
+	 * 
+	 * @Autowired SqlSession sqlSession;
+	 */
 	
 	VisitDAO visit_dao;
 	
@@ -35,27 +50,37 @@ public class VisitController {
 	
 	@RequestMapping("visit_insert.do")
 	public String insert(VisitVO vo) {
+		
+		String ip = request.getRemoteAddr();
+		vo.setIp(ip);
+		
 		int res = visit_dao.insertVisit(vo);
 		return "redirect:list.do";
 	}
 	
 	@RequestMapping("del_visit")
 	@ResponseBody
-	public String delVisit(int idx, String pwd) {
-		String result = "no";
-		String setPwd = visit_dao.checkPwd(idx);
-		if(setPwd != null && setPwd.equals(pwd)) {
-			int res = visit_dao.delVisit(idx);
-			
-			if(res == 1) {
-				//삭제 성공 시
-				result = "yes";
-			}
-			
-		}
-		System.out.println(result);
-		return result;
+	public String delVisit(int idx/* , String pwd */) {
+		/*
+		 * String result = "no"; 
+		 * String setPwd = visit_dao.checkPwd(idx); 
+		 * if(setPwd != null && setPwd.equals(pwd)){
+		 *   int res = visit_dao.delVisit(idx);
+		 * 
+		 * if(res == 1) { //삭제 성공 시 result = "yes"; }
+		 * 
+		 * } System.out.println(result); return result;
+		 */
 		
+		int res = visit_dao.delVisit(idx);
+		
+		String result = "no"; 
+		if(res == 1) { 
+			//삭제 성공 시 
+			result = "yes"; 
+		}
+			
+		return result;
 		
 	}
 	
@@ -69,6 +94,10 @@ public class VisitController {
 	
 	@RequestMapping("visit_update.do")
 	public String update(VisitVO vo) {
+		
+		String ip = request.getRemoteAddr();
+		vo.setIp(ip);
+		
 		int res = visit_dao.updateVisit(vo);
 		return "redirect:list.do";
 	}

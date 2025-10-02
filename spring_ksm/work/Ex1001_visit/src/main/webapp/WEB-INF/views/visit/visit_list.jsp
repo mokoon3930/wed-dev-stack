@@ -8,10 +8,37 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<link rel="stylesheet" href="/visit/resources/css/visit.css">
+
 <script src="/visit/resources/js/httpRequest.js"></script>
 
 <script>
 
+	function del(f){
+				 
+		 /*
+		let url = "del_visit.do";
+		let param = "idx="+f.idx.value + "&pwd="+f.pwd.value;
+		sendRequest (url, param, deleteFn, "post"); */
+		
+		let pwd = f.pwd.value;// 원래비번
+		let c_pwd = f.c_pwd.value;//입력받은 비번
+		
+		if(pwd != c_pwd){
+			alert("비밀번호 불일치")
+			return;
+		}
+		
+		if(!confirm('정말 삭제를 하시겠어요?')){
+			return;
+		}
+		
+		let url = "del_visit.do";
+		let param = "idx="+f.idx.value;
+		sendRequest (url, param, deleteFn, "post");
+		
+	}
+	
 	function deleteFn() {
 		if(xhr.readyState == 4 && xhr.status == 200 ){
 			
@@ -19,52 +46,67 @@
 			
 			if(data == 'no'){
 				alert("삭제 불가능")
+				return;
 			}else{
 				alert("삭제 성공")
 				location.href="list.do";
 			}
 		}
 		}
+	
+	
+	function modify(f) {
+		
+		let pwd = f.pwd.value;// 원래비번
+		let c_pwd = f.c_pwd.value;//입력받은 비번
+		
+		if(pwd != c_pwd){
+			alert("비밀번호 불일치")
+			return;
+		}
+		
+		f.method ="post"
+		f.action="selectOne.do"
+		f.submit();
+	}
 
 </script>
 
 </head>
-<body style="text-align: center;">
-    <h1>방명록 리스트</h1>
-    <input type="button" value="글쓰기"  onclick="location.href='regi_visit.do'"/>
-    <c:forEach var="vo" items="${list}">
-    
-    <form>
-    
-	    <div style="
-	        border: 1px solid #ccc; 
-	        padding: 10px; 
-	        margin: 10px auto; 
-	        width: 60%; 
-	        text-align: left; 
-	        border-radius: 5px; 
-	        box-shadow: 1px 1px 5px #ddd;
-	 		">
-	 		<input type="hidden" name="idx" value="${vo.idx}" />
-	        <div>
-	            <input name="content" value="${vo.content}" style="width: 100%;"/>
-	        </div>
-	        <div>
-	        	<input type="hidden" name="ip" value="${vo.ip}" />
-	            <input name="name" style="width: 100%;" value="작성자:${vo.name}(${vo.ip})"/> 
-	        </div>
-	        <div>
-	            <input name="regdate" value="작성일자:${vo.regdate}" style="width: 100%;"/>
-	        </div>
-	        <div>
-	            비밀번호:<input name="pwd" type="password" style="width: 60%;" />
-	            <input type="button" value="수정" onclick="location.href='selectOne.do?idx=${vo.idx}'"/>
-	            <input type="button" value="삭제" onclick="del(this.form)"/>
-	        </div>
-    	</div>
+<body>
+	<div id="main_box">
+		<h1>::방명록 리스트::</h1>
+		<div align="center">
+			<input type="button" value="글쓰기"  onclick="location.href='regi_visit.do'"/>
+		</div>
 	
-   </form>
-   </c:forEach> 
+	<c:forEach var="vo" items="${list}">
+	
+	<div class="visit_box">
+		<div class="type_content"><pre>${vo.content}</pre></div>
+		<div class="type_name">작성자: ${vo.name}(${vo.ip})</div>
+		<div class="type_regdate">작성일: ${vo.regdate}</div>
+		
+		<div>
+			<form>
+				<input type="hidden" name="idx" value="${vo.idx}">
+				<input type="hidden" name="pwd" value="${vo.pwd}">
+				
+				비밀번호: <input type="password" name="c_pwd">
+				<%-- <input type="button" value="수정" onclick="location.href='selectOne.do?idx=${vo.idx}'"/> --%>
+				<input type="button" value="수정" onclick="modify(this.form)"/>
+				<input type="button" value="삭제" onclick="del(this.form)"/>
+			</form>
+			
+		</div>
+		
+	</div>
+	
+	
+	</c:forEach>
+	
+	
+
 </body>
 
 </html>

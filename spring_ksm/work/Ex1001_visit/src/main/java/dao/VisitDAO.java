@@ -12,7 +12,6 @@ public class VisitDAO {
 	
 	public VisitDAO(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
-		System.out.println("dao»ý¼ºÀÚ");
 	}
 	
 	public List<VisitVO> selectList(){

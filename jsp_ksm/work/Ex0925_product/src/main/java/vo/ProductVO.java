@@ -5,7 +5,6 @@ public class ProductVO {
 	private int idx, p_price, p_saleprice;
 	private String category, p_num, p_name, p_company;
 	private String p_image_s, p_image_l, p_content, p_date;
-	
 	private int sale_rate;
 	
 	public int getSale_rate() {

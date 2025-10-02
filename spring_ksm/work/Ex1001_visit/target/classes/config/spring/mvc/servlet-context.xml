@@ -21,6 +21,9 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- Autowired를 사용하기 위해 즈는 속성 (자동주입) -->
+	<context:annotation-config />
+	
 	<beans:bean class="controller.VisitController">
 		<beans:property name="visit_dao" ref="visit_dao" />
 	</beans:bean>

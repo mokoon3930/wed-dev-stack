@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="p">
+		
+	<select id="pro_list" resultType="pro" parameterType="String">
+		select * from product where category=#{category}
+	</select>
+	
+	<!-- 상품 등록 -->
+	<insert id="pro_insert" parameterType="pro">
+		insert into product values(
+		   seq_pro_idx.nextVal, 
+		   #{category}, 
+		   #{p_num}, 
+		   #{p_name}, 
+		   #{p_company}, 
+		   #{p_price}, 
+		   #{p_saleprice}, 
+		   #{p_image_s}, 
+		   #{p_image_l}, 
+		   #{p_content}, 
+		   sysdate
+		)
+	</insert>
+
+	<select id="pro_modify" resultType="pro" parameterType="int">
+		select * from product where idx=#{idx}
+	</select>
+	
+	<update id="update" parameterType="pro">
+		update product set 
+		category=#{category}, 
+		p_num=#{p_num}, 
+		p_name=#{p_name}, 
+		p_company=#{p_company}, 
+		p_price=#{p_price}, 
+		p_saleprice=#{p_saleprice}, 
+		p_image_s = #{p_image_s,jdbcType=VARCHAR},
+        p_image_l = #{p_image_l,jdbcType=VARCHAR},
+        p_content = #{p_content,jdbcType=VARCHAR} 
+		where idx=#{idx}
+	
+	</update>
+
+	
+	<select id="pro_one" parameterType="int" resultType="pro">
+		select * from product where idx=#{idx}
+	</select>	
+		
+		
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
