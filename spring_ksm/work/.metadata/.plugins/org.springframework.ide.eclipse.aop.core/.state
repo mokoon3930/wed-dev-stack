@@ -6,4 +6,5 @@
 <aop-project name="Ex1001_visit"/>
 <aop-project name="Ex0929_first"/>
 <aop-project name="Ex1001_product"/>
+<aop-project name="Ex1002_fileupload"/>
 </aop-reference-model>
