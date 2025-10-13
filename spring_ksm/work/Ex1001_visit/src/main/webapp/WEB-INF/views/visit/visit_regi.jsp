@@ -21,7 +21,7 @@
 
 </head>
 <body>
-	<form>
+	<form method="post" enctype="multipart/form-data">
 		<table border="1" align="center">
 			<caption>새 글 작성</caption>
 			<tr>
@@ -45,6 +45,13 @@
 				<th>비밀 번호</th>
 				<td>
 					<input type="password" name="pwd" />
+				</td>
+			</tr>
+			
+			<tr>
+				<th>파일 첨부</th>
+				<td>
+					<input type="file" name="photo" />
 				</td>
 			</tr>
 			
