@@ -1,0 +1,15 @@
+INDEX VERSION 1.134
+C:\Users\rkdtj\Documents\GitHub\wed-dev-stack\jsp_ksm\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3612762220.index
+\Ex0925_api\src\main\java
+C:\Users\rkdtj\Documents\GitHub\wed-dev-stack\jsp_ksm\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2057814313.index
+\Ex0925_product\src\main\java
+C:\Users\rkdtj\Documents\GitHub\wed-dev-stack\jsp_ksm\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\235390148.index
+\Ex0922_work_2\src\main\java
+C:\Users\rkdtj\Documents\GitHub\wed-dev-stack\jsp_ksm\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\983633376.index
+\Ex0923_user\src\main\java
+C:\Users\rkdtj\Documents\GitHub\wed-dev-stack\jsp_ksm\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3808107478.index
+\Ex0922_DB\src\main\java
+C:\Users\rkdtj\Documents\GitHub\wed-dev-stack\jsp_ksm\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2913369885.index
+\Ex0922_work\src\main\java
+C:\Users\rkdtj\Documents\GitHub\wed-dev-stack\jsp_ksm\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3531938511.index
+\Ex0924_session\src\main\java
