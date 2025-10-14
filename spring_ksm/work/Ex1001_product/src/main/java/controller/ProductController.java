@@ -54,7 +54,7 @@ public class ProductController {
 	public String ProductInsert(ProductVO vo) {
 	String web_path = "/images";
 	String savePath = app.getRealPath(web_path);
-	
+	  
 	//System.out.println("절대경로:" + path);
 	
 	/*
