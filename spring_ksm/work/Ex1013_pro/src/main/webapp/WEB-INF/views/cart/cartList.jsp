@@ -6,7 +6,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
@@ -14,7 +14,7 @@
 
 	function modify(f) {
 		
-		let c_cnt = f.c_cnt.value;
+		let c_cnt = f.c_cnt.value;  
 		
 		let patt = /^[0-9]*$/;
 		if( !patt.test(c_cnt) || c_cnt == '' || c_cnt == 0 ){
