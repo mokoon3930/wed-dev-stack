@@ -29,7 +29,7 @@
 				let data = xhr.responseText;
 				let json = eval(data);
 				
-				if( json[0].result == 'yes'){
+				if( json[0].result == 'yes'){ 
 					alert("장바구니에 담았습니다");
 					
 					if(confirm("장바구니로 이동하시겠습니까?")){

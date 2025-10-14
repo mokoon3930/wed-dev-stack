@@ -26,7 +26,7 @@
 			<tr>
 				<th>작성자</th>
 				<td>
-					<input name="name" value="${vo.name}">
+					<input name="name" value="${vo.name}"> 
 				</td>
 			</tr>
 			

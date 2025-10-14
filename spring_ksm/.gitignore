@@ -1,4 +1,2 @@
-**/sts-bundle/
-**/.metadata/
-**/.settings/
-**/configuration/
+/.metadata/
+util/

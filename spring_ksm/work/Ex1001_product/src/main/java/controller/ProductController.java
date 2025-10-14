@@ -30,21 +30,21 @@ public class ProductController {
 		//list.do <-- null
 		//list.do?category= <--- empty
 		if( category == null || category.isEmpty() ) {
-			// °­Á¦·Î com001·Î ÀâÀ½
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ com001ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			category = "com001";
 		}
 		
-		//Ä«Å×°í¸®º° ¸ñ·Ï Á¶È¸
+		//Ä«ï¿½×°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 		List<ProductVO> list = product_dao.select(category);
 		
-		//¹ÙÀÎµù
+		//ï¿½ï¿½ï¿½Îµï¿½
 		model.addAttribute("list", list);
 		
 		return "product/product_list";
 		
 	}
 	
-	@RequestMapping("product_regi.do")
+	@RequestMapping("product_regi.do")  
 	public String ProductRegi() {
 		return "product/product_regi_form";
 		
@@ -55,10 +55,10 @@ public class ProductController {
 	String web_path = "/images";
 	String savePath = app.getRealPath(web_path);
 	  
-	//System.out.println("Àý´ë°æ·Î:" + path);
+	//System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:" + path);
 	
 	/*
-	 * //ÃÖ´ë ¾÷·Îµå ¿ë·® int max_size = 1024 * 1024 * 100;
+	 * //ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Îµï¿½ ï¿½ë·® int max_size = 1024 * 1024 * 100;
 	 */
 	MultipartFile photoS = vo.getP_image_s();
 	MultipartFile photoL = vo.getP_image_l();
@@ -67,7 +67,7 @@ public class ProductController {
 	
 	
 	/*
-	//ÆÄÀÏ ÀÌ¿ÜÀÇ ³ª¸ÓÁö ÆÄ¶ó¹ÌÅÍµé ¼ö½Å
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½Íµï¿½ ï¿½ï¿½ï¿½ï¿½
 	String category = mr.getParameter("category");
 	String p_num = mr.getParameter("p_num");
 	String p_name = mr.getParameter("p_name");
@@ -89,7 +89,7 @@ public class ProductController {
 	vo.setP_image_l(p_image_l);
 	
 	System.out.println(vo.toString());
-	//»óÇ° Á¤º¸¸¦ DB·Î
+	//ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DBï¿½ï¿½
 	ProductDAO.getInstance().insert(vo);
 	
 	response.sendRedirect("list.do?category="+category);

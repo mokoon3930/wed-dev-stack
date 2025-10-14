@@ -37,4 +37,4 @@
 	</table>
 	<input type="button" value="등록" onclick="location.href='insert_form.jsp' ">
 </body>
-</html>
+</html> 

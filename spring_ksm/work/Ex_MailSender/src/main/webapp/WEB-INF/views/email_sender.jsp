@@ -21,7 +21,7 @@
     sendRequest(url, param, resultMail, "post");
   }
 
-  let res;
+  let res; 
 
   /* 컨트롤러에서 받은 인증 코드 처리 */
   function resultMail() {

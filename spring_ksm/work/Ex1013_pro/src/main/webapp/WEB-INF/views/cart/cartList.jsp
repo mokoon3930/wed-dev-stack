@@ -24,7 +24,7 @@
 		
 		f.action = "cart_update.do";
 		f.submit();
-		
+		 
 	}
 	
 function del(c_idx){
