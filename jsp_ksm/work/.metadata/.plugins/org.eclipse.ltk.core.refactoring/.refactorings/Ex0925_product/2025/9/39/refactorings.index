@@ -1,0 +1,21 @@
+1758766559602	Delete element
+1758766568855	Delete element
+1758766743305	Delete element
+1758766979515	Rename resource 'member.xml'
+1758771143438	Delete element
+1758777124522	Rename resource 'product_regi.jsp'
+1758785050789	Move 'product_modify.jsp' to 'webapp'
+1758849151236	Rename resource 'cartList.jsp'
+1758849174476	Rename resource 'cart_List.jsp'
+1758852314771	Delete element
+1758852329038	Copy file
+1758864695848	Move 'login.jsp' to 'webapp'
+1758864969248	Delete element
+1758864996631	Copy file
+1758874058144	Delete element
+1758874854459	Rename resource 'uesr.xml'
+1758875090861	Rename resource 'puesr.xml'
+1758875250976	Rename resource 'uesr.xml'
+1758875681060	Rename resource 'user.xml'
+1758875731272	Rename type 'UserVO'
+1758875747906	Rename type 'UserDAO'

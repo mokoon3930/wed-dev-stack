@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #f0f4ff, #d9e8ff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    margin-top: 40px;
+    font-size: 38px;
+    font-weight: 800;
+    color: #2f3a61;
+  }
+
+  /* 검색창 */
+  .search-box {
+    margin: 20px 0 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .search-box input[type="text"] {
+    width: 400px;
+    padding: 14px 20px;
+    font-size: 18px;
+    border: 2px solid #c5d4f5;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s;
+  }
+
+  .search-box input[type="text"]:focus {
+    border-color: #4a74f8;
+    box-shadow: 0 0 10px rgba(74, 116, 248, 0.4);
+  }
+
+  .search-box input[type="button"] {
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #4a74f8, #5c8efb);
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .search-box input[type="button"]:hover {
+    background: linear-gradient(135deg, #3a63e6, #507ff5);
+    transform: translateY(-2px);
+  }
+
+  /* 결과 카드 컨테이너 */
+  #resTable {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 60px;
+  }
+
+  /* 개별 도서 카드 */
+  .book-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(74, 116, 248, 0.3);
+  }
+
+  .book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: #f9fbff;
+  }
+
+  .book-info {
+    padding: 20px;
+  }
+
+  .book-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2f3a61;
+  }
+
+  .book-info p {
+    margin: 6px 0;
+    font-size: 16px;
+    color: #555;
+  }
+
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a74f8;
+    margin-top: 8px;
+  }
+

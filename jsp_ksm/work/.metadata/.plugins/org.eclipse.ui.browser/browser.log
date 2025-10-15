@@ -1,0 +1,14 @@
+
+9월 24, 2025 16:10:06.893 NEW SESSION
+9월 24, 2025 16:10:06.893 Created TensorFlow Lite XNNPACK delegate for CPU.
+9월 24, 2025 16:10:06.989 [8492:13352:0924/161006.989:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+9월 24, 2025 16:10:27.121 Created TensorFlow Lite XNNPACK delegate for CPU.
+9월 24, 2025 16:10:27.268 [2412:7580:0924/161027.268:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: QUOTA_EXCEEDED
+
+9월 26, 2025 08:48:57.55 NEW SESSION
+9월 26, 2025 08:48:57.56 Created TensorFlow Lite XNNPACK delegate for CPU.
+9월 26, 2025 08:48:57.254 [7088:7656:0926/084857.253:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+9월 26, 2025 08:49:18.596 [7088:7656:0926/084918.596:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+9월 26, 2025 08:50:03.380 [7088:7656:0926/085003.379:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+9월 26, 2025 08:51:43.778 [7088:7656:0926/085143.777:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: QUOTA_EXCEEDED
+9월 26, 2025 14:54:10.339 [7088:10256:0926/145410.339:ERROR:components\device_event_log\device_event_log_impl.cc:198] [14:54:10.339] Bluetooth: bluetooth_adapter_winrt.cc:1055 Getting Default Adapter failed.

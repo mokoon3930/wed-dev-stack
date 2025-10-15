@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>도서 검색</title>
+<link rel="stylesheet" href="/css/book.css">
+<script src="/js/httpRequest.js"></script>
+
+<script>
+function m_send(f) {
+   let url = "list.do";
+   let param = "search_txt=" + f.search_txt.value;
+   sendRequest(url, param, resultFn, "get");
+}
+
+function resultFn() {
+   if (xhr.readyState == 4 && xhr.status == 200) {
+      let data = xhr.responseText;
+      let json = eval(data);
+
+      let resTable = document.getElementById("resTable");
+      resTable.innerHTML = ""; // 초기화
+
+      json[0].items.forEach(item => {
+         let card = document.createElement("div");
+         card.className = "book-card"; // 카드 스타일 적용
+
+         card.innerHTML = `
+            <img src="${item.image}" alt="book cover">
+            <div class="book-info">
+              <h3>${item.title}</h3>
+              <p>저자: ${item.author}</p>
+              <p class="price">${item.discount}원</p>
+            </div>
+         `;
+         resTable.appendChild(card);
+      });
+   }
+}
+</script>
+</head>
+
+<body>
+   <h1>📚 도서 검색</h1>
+
+   <div class="search-box">
+      <input type="text" name="search_txt" placeholder="검색어를 입력하세요">
+      <input type="button" value="검색" onclick="m_send(this.form)">
+   </div>
+
+   <!-- 📌 table 대신 div 컨테이너 -->
+   <div id="resTable"></div>
+
+</body>
+</html>
