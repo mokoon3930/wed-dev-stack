@@ -21,13 +21,13 @@ public class SearchAct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//list.do?search_txt=ㅁㅁㅁㅁ
+		//list.do?search_txt=ㅁㅁㅁㅁ 입력한 정보가 담김
 		String search_txt = request.getParameter("search_txt");
 		
 		// 웹에 보넬 검색어를 UTF-8로 인코딩 
 		String search = URLEncoder.encode(search_txt, "UTF8");
 		
-		//get 방식으로 보네기
+		//get 방식으로 보네기 / display=20 - 검색결과는 20개
 		String urlStr = "https://openapi.naver.com/v1/search/book.json?query="+search+"&display=20";
 		
 		//접속
@@ -53,9 +53,10 @@ public class SearchAct extends HttpServlet {
 			resultJson += line;
 		}
 		
+		//다하면 닫아주기
 		br.close();
 		conn.disconnect();
-		
+		// 포워딩
 		response.setContentType("text/plain;charset=UTF-8");
 		response.getWriter().println("["+resultJson+"]");
 		

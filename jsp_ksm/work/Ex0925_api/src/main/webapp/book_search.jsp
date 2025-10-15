@@ -8,23 +8,23 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/book.css">
 	<script src="js/httpRequest.js"></script>
 	<script>
+		/* onclick 버튼을 눌러서 함수 실행 / Ajax 사용*/
 		function m_send(f){
-		
 			
-		   let url = "list.do";
-		   let param = "search_txt="+f.search_txt.value;
-		   sendRequest(url, param, resultFn, "get");
+		   let url = "list.do"; // 서블릿으로 요청을 보넴
+		   let param = "search_txt="+f.search_txt.value; // 받은 파라미터  같이 보넴
+		   sendRequest(url, param, resultFn, "get"); // 서블릿에서 콜백으로 돌아올 함수
 		   
 		}
 		
 		    function resultFn(){
 		       if(xhr.readyState == 4 && xhr.status == 200 ){
-		          
-		    	   let data = xhr.responseText;
-		    	   let json = eval(data);
+		          // 응답 완료 				정상
+		    	   let data = xhr.responseText; // 콜백으로 받은 JSON 문자열로 받아옴
+		    	   let json = eval(data); // 문자열을 실제 JSON 객체로 변환
 		    	   
 		    	   let resTable = document.getElementById("resTable");
-		    	   resTable.innerHTML = "";
+		    	   resTable.innerHTML = ""; // 이전 결과 지움
 		    	   
 		    	   //가져온 도서 수 만큼 반복
 		    	   json[0].items.forEach( item => {
