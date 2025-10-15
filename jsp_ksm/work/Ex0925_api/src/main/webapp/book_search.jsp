@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/book.css">
 	<script src="js/httpRequest.js"></script>
 	<script>
 		function m_send(f){
+		
+			
 		   let url = "list.do";
 		   let param = "search_txt="+f.search_txt.value;
 		   sendRequest(url, param, resultFn, "get");

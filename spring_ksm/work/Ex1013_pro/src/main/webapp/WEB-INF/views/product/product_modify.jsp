@@ -26,7 +26,7 @@
 	<table border="1" align="center" width="600">
 		
 		<tr>
-			<td>제품 카테고리</td> 
+			<td>제품 카테고리</td>
 			<td>
 				<select name="category">
 					<option> 카테고리 선택 </option>

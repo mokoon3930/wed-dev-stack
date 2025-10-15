@@ -29,7 +29,7 @@
 	<c:forEach var="p" items="${list}">
 		<tr bgcolor="#dedede">
 			<th width="12%">제품코드</th>
-			<th width="12%">이미지</th> 
+			<th width="12%">이미지</th>
 			<th width="35%">제품명</th>
 			
 			<th>가격</th>

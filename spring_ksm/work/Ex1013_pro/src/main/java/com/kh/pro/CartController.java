@@ -17,7 +17,7 @@ public class CartController {
 		this.cart_dao = cart_dao;
 	}
 	
-	//Àå¹Ù±¸´Ï º¸±â
+	//ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/cart_list.do")
 	public String cartList(int m_idx, Model model) {
 	
@@ -29,10 +29,10 @@ public class CartController {
 		model.addAttribute("total", total);
 		
 		return "/cart/cartList";
-		
-	}
+		  
+	}     
 	
-	//Àå¹Ù±¸´Ï ´ã±â
+	//ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	@RequestMapping("cart_insert.do")
 	@ResponseBody
 	public String addcart(CartVO vo) {
@@ -43,7 +43,7 @@ public class CartController {
 		
 		if(resVo == null) {
 			result = "yes";
-			//»óÇ°À» Àå¹Ù±¸´Ï¿¡ µî·Ï
+			//ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½Ù±ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½
 			cart_dao.insert(vo);
 		}
 		
@@ -52,7 +52,7 @@ public class CartController {
 		return resStr;
 	}
 	
-	//Àå¹Ù±¸´Ï »èÁ¦
+	//ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("cart_delete.do")
 	public String deleteCart(int c_idx, Model model) {
 		
@@ -68,16 +68,16 @@ public class CartController {
 		return "/cart/cartList";
 	}
 	
-	//Àå¹Ù±¸´Ï ¼öÁ¤
+	//ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("cart_update.do")
 	public String update(CartVO vo, Model model) {
 		
 		cart_dao.update_cnt( vo );
 		
-		//ÇöÀç Á¢¼ÓÇÑ È¸¿øÀÇ Àå¹Ù±¸´Ï ¸ñ·Ï Á¶È¸ 1 = È¸¿ø¹øÈ£
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ 1 = È¸ï¿½ï¿½ï¿½ï¿½È£
 		List<CartVO> list = cart_dao.select(1);
 		
-		// Àå¹Ù±¸´Ï ÃÑ°è
+		// ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½
 		int total_amount = cart_dao.selectTotalAmount(1);
 		
 		model.addAttribute("list", list);

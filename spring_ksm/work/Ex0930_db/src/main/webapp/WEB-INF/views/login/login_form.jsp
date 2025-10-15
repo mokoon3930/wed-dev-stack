@@ -23,7 +23,7 @@
 			if(xhr.readyState == 4 && xhr.status == 200 ){
 				
 				let data = xhr.responseText;
-				let json = eval(data); 
+				let json = eval(data);
 				
 				if(json[0].res == 'no_id'){
 					alert("존재하는 아이디가 아닙니다")

@@ -24,7 +24,7 @@
 	<!-- DeptController생성 및 dao를 인젝션으로 받는다 -->
 	<beans:bean class="controller.DeptController">
 		<beans:constructor-arg ref="dept_daoBean"/>
-	</beans:bean> 
+	</beans:bean>
 	
 	
 	

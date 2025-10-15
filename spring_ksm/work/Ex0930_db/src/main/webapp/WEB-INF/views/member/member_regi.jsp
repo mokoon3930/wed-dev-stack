@@ -25,7 +25,7 @@
 	<table border="1">
 	<caption>회원가입 페이지</caption>
 		<tr>
-			<th>이름</th> 
+			<th>이름</th>
 			<td>
 				<input name="name"> 
 			</td>

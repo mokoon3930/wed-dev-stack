@@ -10,4 +10,4 @@
 	${vo.title}<br>
 	<img src="resources/upload/${vo.filename}"/>
 </body>
-</html> 
+</html>

@@ -8,5 +8,5 @@
 	<bean id="dept_daoBean" class="dao.DeptDAO">
 		<property name="sqlSession" ref="sqlSessionBean"/>
 	</bean>
-		 
+		
 </beans>

@@ -22,13 +22,13 @@ public class MemberController {
 	}
 	
 	@RequestMapping("login.do")
-	@ResponseBody
+	@ResponseBody   
 	public String login(MemberVO vo) {
 		
 		String param = "";
 		String resultStr = "";
 		
-		//id°¡ ÀÏÄ¡ÇÏÁö ¾ÊÀ» °æ¿ì
+		//idï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		if(vo == null) {
 			param = "no_id";
 			resultStr = String.format("[{'param':'%s'}]", param);
@@ -36,7 +36,7 @@ public class MemberController {
 			return resultStr;
 		}
 		
-		//ºñ¹Ð¹øÈ£ ºÒÀÏÄ¡
+		//ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½Ä¡
 		if(vo == null) {
 			param = "no_pwd";
 			resultStr = String.format("[{'param':'%s'}]", param);

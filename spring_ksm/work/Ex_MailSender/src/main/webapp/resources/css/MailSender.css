@@ -21,6 +21,26 @@ body {
   text-align: center;
 }
 
+/* 📌 페이지 제목 스타일 */
+#main_box .page_title {
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  color: #2f3a61 !important;
+  margin-bottom: 15px !important;
+  letter-spacing: -0.5px !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+}
+
+#main_box hr {
+  border: none;
+  height: 3px;
+  width: 70%;
+  margin: 0 auto 40px;
+  background: linear-gradient(to right, #4a74f8, #5c8efb);
+  border-radius: 2px;
+}
+
 /* 부모 div도 넓게 */
 .type_content {
   width: 100%;
@@ -33,13 +53,13 @@ body {
 #main_box input[type="number"],
 #main_box input[type="password"] {
   display: block;
-  width: 100%;           
+  width: 100%;
   max-width: 100%;
-  padding: 18px 20px;
+  padding: 24px 26px; /* 버튼 높이와 동일 */
   margin-bottom: 20px;
-  font-size: 17px;
+  font-size: 19px;
   border: 2px solid #c5d4f5;
-  border-radius: 12px;
+  border-radius: 14px;
   background: #f9fbff;
   outline: none;
   transition: all 0.25s ease-in-out;
@@ -49,7 +69,7 @@ body {
 /* placeholder */
 #main_box input::placeholder {
   color: #a0a8b8;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 /* 포커스 */
@@ -72,13 +92,13 @@ body {
   display: block;
   width: 100%;
   max-width: 100%;
-  padding: 18px;
-  font-size: 17px;
-  font-weight: 600;
+  padding: 24px;
+  font-size: 19px;
+  font-weight: 700;
   background: linear-gradient(135deg, #4a74f8, #5c8efb);
   color: #ffffff;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
   margin-top: 4px;

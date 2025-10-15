@@ -28,7 +28,7 @@
 			<td>
 				<select name="category">
 					<option> 카테고리 선택 </option>
-					<option value="com001">컴퓨터</option> 
+					<option value="com001">컴퓨터</option>
 					<option value="ele002">생활가전</option>
 					<option value="sp003">스포츠 용품</option>
 				</select>

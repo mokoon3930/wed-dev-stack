@@ -12,8 +12,8 @@ public class ProductVO {
 	private MultipartFile photo1, photo2;
 	
 	public int getM_idx() {
-		return m_idx;
-	}
+		return m_idx;  
+	}  
 
 	public void setM_idx(int m_idx) {
 		this.m_idx = m_idx;
@@ -40,7 +40,7 @@ public class ProductVO {
 	}
 
 	public int getSale_rate() {
-		//(Á¤°¡ - ÇÒÀÎ°¡) / Á¤°¡ * 100
+		//(ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½Î°ï¿½) / ï¿½ï¿½ï¿½ï¿½ * 100
 		if(p_price == 0) {
 			return 0;
 		}
