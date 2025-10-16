@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/* ✅ 전체 화면 설정 */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 메인 박스 */
+#main_box {
+  width: 520px;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* 페이지 제목 */
+#main_box .page_title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+/* 구분선(hr) */
+#main_box hr {
+  border: none;
+  height: 3px;
+  width: 70%;
+  margin: 0 auto 40px;
+  background: rgb(100,149,237);
+  border-radius: 2px;
+}
+
+/*  부모 영역 */
+.type_content {
+  width: 100%;
+  display: block;
+}
+
+/*  입력창  */
+#main_box input[type="text"],
+#main_box input[type="email"],
+#main_box input[type="number"],
+#main_box input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 24px 26px;
+  margin-bottom: 20px;
+  font-size: 19px;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.25s ease-in-out;
+}
+
+/*  placeholder 스타일 */
+#main_box input::placeholder {
+  color: #a0a8b8;
+  font-size: 17px;
+}
+
+/*  포커스 시 효과 */
+#main_box input:focus {
+  border-color: #4a74f8;
+  background: #ffffff;
+  box-shadow: 0 0 12px rgba(74, 116, 248, 0.35);
+}
+
+/*  비활성화된 input */
+#main_box input:disabled {
+  background: #e9edf7;
+  color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/*  버튼 스타일 */
+#main_box input[type="button"] {
+  display: block;
+  width: 100%;
+  padding: 24px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgb(100,149,237);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#main_box input[type="button"]:hover {
+  background: rgb(237,149,100);
+  transform: translateY(-2px); /* 마우스를 올리면 살짝 튀어주는 효과 */
+}
+
+#main_box input[type="button"]:active {
+  transform: translateY(0);
+}
+
+/* 인증 결과 텍스트 */
+#mail_check_warn {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#mail_check_warn:empty {
+  display: none;
+}
+
+#mail_check_warn.success {
+  color: #28a745; /* 성공 */
+}
+
+#mail_check_warn.error {
+  color: #dc3545; /* 불일치 */
+}

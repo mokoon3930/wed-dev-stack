@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+/* 전체 화면 */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 메인 박스 */
+#main_box {
+  width: 520px;
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+/* 페이지 제목 스타일 */
+#main_box .page_title {
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  color: #2f3a61 !important;
+  margin-bottom: 15px !important;
+  letter-spacing: -0.5px !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+}
+
+#main_box hr {
+  border: none;
+  height: 3px;
+  width: 70%;
+  margin: 0 auto 40px;
+  background: skyblue;
+  border-radius: 2px;
+}
+
+/* 부모 div도 넓게 */
+.type_content {
+  width: 100%;
+  display: block;
+}
+
+/* input */
+#main_box input[type="text"],
+#main_box input[type="email"],
+#main_box input[type="number"],
+#main_box input[type="password"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 24px 26px; /* 버튼 높이와 동일 */
+  margin-bottom: 20px;
+  font-size: 19px;
+  border: 2px solid #c5d4f5;
+  border-radius: 14px;
+  background: #f9fbff;
+  outline: none;
+  transition: all 0.25s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* placeholder */
+#main_box input::placeholder {
+  color: #a0a8b8;
+  font-size: 17px;
+}
+
+/* 포커스 */
+#main_box input:focus {
+  border-color: #4a74f8;
+  background: #ffffff;
+  box-shadow: 0 0 12px rgba(74, 116, 248, 0.35);
+}
+
+/* disabled */
+#main_box input:disabled {
+  background: #e9edf7;
+  color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* 버튼 */
+#main_box input[type="button"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 24px;
+  font-size: 19px;
+  font-weight: 700;
+  background: skybule;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  margin-top: 4px;
+}
+
+#main_box input[type="button"]:hover {
+  background: skybule;
+  transform: translateY(-2px);
+}
+
+#main_box input[type="button"]:active {
+  transform: translateY(0);
+}
+
+/* 인증 결과 텍스트 */
+#mail_check_warn {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#mail_check_warn:empty {
+  display: none;
+}
+
+#mail_check_warn:contains("성공") {
+  color: #28a745;
+}
+
+#mail_check_warn:contains("불일치") {
+  color: #dc3545;
+}

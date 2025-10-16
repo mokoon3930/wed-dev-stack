@@ -1,9 +1,7 @@
 @charset "UTF-8";
 
-/* 전체 화면 */
+/* 전체 화면 설정 */
 body {
-  font-family: 'Noto Sans KR', sans-serif;
-  background: linear-gradient(135deg, #f0f4ff, #d9e8ff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,120 +12,108 @@ body {
 /* 메인 박스 */
 #main_box {
   width: 520px;
-  background: #ffffff;
   padding: 50px 40px;
   border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* 📌 페이지 제목 스타일 */
+/* 페이지 제목 */
 #main_box .page_title {
-  font-size: 38px !important;
-  font-weight: 800 !important;
-  color: #2f3a61 !important;
-  margin-bottom: 15px !important;
-  letter-spacing: -0.5px !important;
-  text-align: center !important;
-  line-height: 1.2 !important;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 15px;
 }
 
+/* 구분선(hr) */
 #main_box hr {
   border: none;
   height: 3px;
   width: 70%;
   margin: 0 auto 40px;
-  background: linear-gradient(to right, #4a74f8, #5c8efb);
+  background: rgb(100,149,237);
   border-radius: 2px;
 }
 
-/* 부모 div도 넓게 */
+/*  부모 영역 */
 .type_content {
   width: 100%;
   display: block;
 }
 
-/* input */
+/*  입력창  */
 #main_box input[type="text"],
 #main_box input[type="email"],
 #main_box input[type="number"],
 #main_box input[type="password"] {
   display: block;
   width: 100%;
-  max-width: 100%;
-  padding: 24px 26px; /* 버튼 높이와 동일 */
+  padding: 24px 26px;
   margin-bottom: 20px;
   font-size: 19px;
-  border: 2px solid #c5d4f5;
+  border: 2px solid rgb(200, 200, 200);
   border-radius: 14px;
-  background: #f9fbff;
   outline: none;
-  transition: all 0.25s ease-in-out;
   box-sizing: border-box;
+  transition: all 0.25s ease-in-out;  /* 클릭시 input 테두리가 바뀜 0.25 초 동안 */ 
 }
 
-/* placeholder */
+/*  placeholder 스타일 */
 #main_box input::placeholder {
   color: #a0a8b8;
   font-size: 17px;
 }
 
-/* 포커스 */
+/*  포커스 시 효과 */
 #main_box input:focus {
   border-color: #4a74f8;
   background: #ffffff;
   box-shadow: 0 0 12px rgba(74, 116, 248, 0.35);
 }
 
-/* disabled */
+/*  비활성화된 input */
 #main_box input:disabled {
   background: #e9edf7;
   color: #6b7280;
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.7;  			 /* 기본 상태보다 살짝 흐려서 비활성 상태라고 보여줌 */
 }
 
-/* 버튼 */
+/*  버튼 스타일 */
 #main_box input[type="button"] {
   display: block;
   width: 100%;
-  max-width: 100%;
   padding: 24px;
   font-size: 19px;
   font-weight: 700;
-  background: linear-gradient(135deg, #4a74f8, #5c8efb);
   color: #ffffff;
+  background: rgb(100,149,237);
   border: none;
   border-radius: 14px;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
   margin-top: 4px;
+  transition: transform 0.2s ease, background 0.2s ease; /* 마우스 효과를 부드럽게 */
 }
 
 #main_box input[type="button"]:hover {
-  background: linear-gradient(135deg, #3a63e6, #507ff5);
-  transform: translateY(-2px);
+  background: rgb(237,149,100);
+  transform: translateY(-2px); /* 마우스를 올리면 살짝 올려주는 효과 */
 }
 
 #main_box input[type="button"]:active {
-  transform: translateY(0);
+  transform: translateY(0);    /* 위의 올려주는 효과를 주어서 누르면 내려주는 효과 */
 }
 
 /* 인증 결과 텍스트 */
 #mail_check_warn {
   margin-top: 15px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 #mail_check_warn:empty {
   display: none;
 }
 
-#mail_check_warn:contains("성공") {
-  color: #28a745;
-}
 
-#mail_check_warn:contains("불일치") {
-  color: #dc3545;
-}

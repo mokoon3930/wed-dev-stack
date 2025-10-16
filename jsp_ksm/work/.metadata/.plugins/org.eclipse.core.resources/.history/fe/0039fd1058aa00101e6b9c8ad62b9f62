@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* 전체 배경 & 폰트 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #d9e8ff);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 페이지 제목 (없다면 무시됨) */
+h1 {
+  margin-top: 40px;
+  font-size: 36px;
+  font-weight: 800;
+  color: #2f3a61;
+}
+
+/* 검색창 */
+form {
+  margin: 30px 0;
+}
+
+form input[name="search_txt"] {
+  width: 400px;
+  padding: 14px 20px;
+  font-size: 18px;
+  border: 2px solid #c5d4f5;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s;
+}
+
+form input[name="search_txt"]:focus {
+  border-color: #4a74f8;
+  box-shadow: 0 0 10px rgba(74, 116, 248, 0.4);
+}
+
+form input[type="button"] {
+  padding: 14px 30px;
+  margin-left: 10px;
+  background: linear-gradient(135deg, #4a74f8, #5c8efb);
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+form input[type="button"]:hover {
+  background: linear-gradient(135deg, #3a63e6, #507ff5);
+  transform: translateY(-2px);
+}
+
+/* 📚 결과 테이블 */
+#resTable {
+  width: 90%;
+  max-width: 900px;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+/* 행 전체 */
+#resTable tr {
+  border-bottom: 1px solid #e0e6f6;
+  transition: background 0.2s;
+}
+
+#resTable tr:hover {
+  background: #f3f6ff;
+}
+
+/* 이미지 셀 */
+#resTable td:first-child {
+  width: 120px;
+  padding: 15px;
+  text-align: center;
+}
+
+#resTable td:first-child img {
+  width: 100px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f9fbff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 책 정보 셀 */
+#resTable td:last-child {
+  padding: 20px;
+  font-size: 16px;
+  vertical-align: middle;
+  line-height: 1.6;
+}
+
+#resTable td:last-child span {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2f3a61;
+}
+
+#resTable td:last-child br {
+  margin-bottom: 4px;
+}
+
+#resTable td:last-child {
+  color: #555;
+}
+
+#resTable td:last-child::before {
+  content: "📖 ";
+  font-size: 18px;
+}
+
+#resTable td:last-child .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4a74f8;
+}

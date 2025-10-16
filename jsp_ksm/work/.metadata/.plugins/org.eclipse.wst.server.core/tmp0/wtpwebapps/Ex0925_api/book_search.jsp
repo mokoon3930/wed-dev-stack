@@ -28,15 +28,17 @@
 		    	   
 		    	   //가져온 도서 수 만큼 반복
 		    	   json[0].items.forEach( item => {
-		    		   let row = document.createElement("tr");
+		    		   let row = document.createElement("tr");  // 새 <tr> 하나 만들기
+		    		   
+		    		   let price = Number(item.discount).toLocaleString();
 		    		   
 		    		   row.innerHTML = "<td><img src='"+ item.image + "' width='100'></td>" +
-		    		   					"<td><span>"+item.title+"</span>"+
-		    		   					"<br>저자 :"+item.author +
-		    		   					"<br>가격 :"+item.discount +
+		    		   					"<td><span class='title'>"+item.title+"</span>"+
+		    		   					"<br>저자 :"+item.author + 
+		    		   					"<br>가격 :<span class='price'>" + price + "원</span>"
 		    		   					"</td>"
 		    		   					
-		    		   	resTable.appendChild(row);				
+		    		   	resTable.appendChild(row);	// 새 <tr> 에 자동으로 정보 담기			
 		    	   } );
 		    	   
 		       }

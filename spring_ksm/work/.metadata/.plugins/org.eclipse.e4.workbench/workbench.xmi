@@ -10,6 +10,7 @@
     <persistedState key="workingSets" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workingSets/>"/>
     <persistedState key="aggregateWorkingSetId" value="Aggregate for window 1760483442698"/>
     <tags>topLevel</tags>
+    <tags>shellMaximized</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_7xedQ6lSEfC7asohF9caFQ" selectedElement="_7xedRKlSEfC7asohF9caFQ" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_7xedRKlSEfC7asohF9caFQ" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_70FFYKlSEfC7asohF9caFQ">
         <children xsi:type="advanced:Perspective" xmi:id="_70FFYKlSEfC7asohF9caFQ" elementId="com.springsource.sts.ide.perspective" selectedElement="_70FFYalSEfC7asohF9caFQ" label="Spring" iconURI="platform:/plugin/org.springframework.ide.eclipse.ui/icons/full/obj16/spring_perspective.gif">
@@ -230,24 +231,28 @@
       <tags>View</tags>
       <tags>categoryTag:Help</tags>
     </sharedElements>
-    <sharedElements xsi:type="advanced:Area" xmi:id="_7z77YKlSEfC7asohF9caFQ" elementId="org.eclipse.ui.editorss" selectedElement="_7z77YalSEfC7asohF9caFQ">
-      <children xsi:type="basic:PartStack" xmi:id="_7z77YalSEfC7asohF9caFQ" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_UWElsKlZEfCdMMe1kY46mw">
-        <tags>org.eclipse.e4.primaryDataStack</tags>
-        <tags>EditorStack</tags>
-        <tags>active</tags>
-        <children xsi:type="basic:Part" xmi:id="_TaQdsKlZEfCdMMe1kY46mw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="MailSender.css" iconURI="platform:/plugin/org.eclipse.wst.css.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.css.core.csssource.source&quot; name=&quot;MailSender.css&quot; partName=&quot;MailSender.css&quot; title=&quot;MailSender.css&quot; tooltip=&quot;Ex_MailSender/src/main/webapp/resources/css/MailSender.css&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Ex_MailSender/src/main/webapp/resources/css/MailSender.css&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;410&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>removeOnHide</tags>
-          <tags>org.eclipse.wst.css.core.csssource.source</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_UWElsKlZEfCdMMe1kY46mw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="email_sender.jsp" iconURI="platform:/plugin/org.eclipse.jst.jsp.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;email_sender.jsp&quot; partName=&quot;email_sender.jsp&quot; title=&quot;email_sender.jsp&quot; tooltip=&quot;Ex_MailSender/src/main/webapp/WEB-INF/views/email_sender.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Ex_MailSender/src/main/webapp/WEB-INF/views/email_sender.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;65&quot; selectionOffset=&quot;195&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>removeOnHide</tags>
-          <tags>org.eclipse.jst.jsp.core.jspsource.source</tags>
+    <sharedElements xsi:type="advanced:Area" xmi:id="_7z77YKlSEfC7asohF9caFQ" elementId="org.eclipse.ui.editorss" selectedElement="_jwOuQKpkEfC-BeY3B-r0EA">
+      <children xsi:type="basic:PartSashContainer" xmi:id="_jwOuQKpkEfC-BeY3B-r0EA" selectedElement="_7z77YalSEfC7asohF9caFQ" horizontal="true">
+        <children xsi:type="basic:PartStack" xmi:id="_7z77YalSEfC7asohF9caFQ" elementId="org.eclipse.e4.primaryDataStack" containerData="5000" selectedElement="_TaQdsKlZEfCdMMe1kY46mw">
+          <tags>org.eclipse.e4.primaryDataStack</tags>
+          <tags>EditorStack</tags>
           <tags>active</tags>
-          <tags>activeOnClose</tags>
+          <children xsi:type="basic:Part" xmi:id="_TaQdsKlZEfCdMMe1kY46mw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="MailSender.css" iconURI="platform:/plugin/org.eclipse.wst.css.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
+            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.css.core.csssource.source&quot; name=&quot;MailSender.css&quot; partName=&quot;MailSender.css&quot; title=&quot;MailSender.css&quot; tooltip=&quot;Ex_MailSender/src/main/webapp/resources/css/MailSender.css&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Ex_MailSender/src/main/webapp/resources/css/MailSender.css&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2298&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+            <tags>Editor</tags>
+            <tags>removeOnHide</tags>
+            <tags>org.eclipse.wst.css.core.csssource.source</tags>
+            <tags>active</tags>
+            <tags>activeOnClose</tags>
+          </children>
+        </children>
+        <children xsi:type="basic:PartStack" xmi:id="_jwOuQapkEfC-BeY3B-r0EA" elementId="PartStack@55a2f3b3" containerData="5000" selectedElement="_UWElsKlZEfCdMMe1kY46mw">
+          <children xsi:type="basic:Part" xmi:id="_UWElsKlZEfCdMMe1kY46mw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="email_sender.jsp" iconURI="platform:/plugin/org.eclipse.jst.jsp.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
+            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;email_sender.jsp&quot; partName=&quot;email_sender.jsp&quot; title=&quot;email_sender.jsp&quot; tooltip=&quot;Ex_MailSender/src/main/webapp/WEB-INF/views/email_sender.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Ex_MailSender/src/main/webapp/WEB-INF/views/email_sender.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1405&quot; selectionTopPixel=&quot;330&quot;/>&#xD;&#xA;&lt;/editor>"/>
+            <tags>Editor</tags>
+            <tags>removeOnHide</tags>
+            <tags>org.eclipse.jst.jsp.core.jspsource.source</tags>
+          </children>
         </children>
       </children>
     </sharedElements>
@@ -420,7 +425,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7yUKwqlSEfC7asohF9caFQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_khkWkKmeEfCYo6VA8_vowA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_7pe_OalSEfC7asohF9caFQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_XEc_N6pkEfC-BeY3B-r0EA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_7pe_OalSEfC7asohF9caFQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7yUKw6lSEfC7asohF9caFQ" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -454,7 +459,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7yUKyqlSEfC7asohF9caFQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_khlktqmeEfCYo6VA8_vowA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_7pe-6qlSEfC7asohF9caFQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_XEc_RKpkEfC-BeY3B-r0EA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_7pe-6qlSEfC7asohF9caFQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7yUKy6lSEfC7asohF9caFQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -2932,7 +2937,7 @@
   <addons xmi:id="_7pJAt6lSEfC7asohF9caFQ" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_7pJAuKlSEfC7asohF9caFQ" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_7pPuUKlSEfC7asohF9caFQ" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_kaDZUameEfCYo6VA8_vowA" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_7patcKlSEfC7asohF9caFQ" elementId="org.eclipse.ui.category.edit" name="Edit"/>
   <categories xmi:id="_7patcalSEfC7asohF9caFQ" elementId="org.eclipse.mylyn.wikitext.ui.editor.category" name="WikiText Markup Editing Commands" description="commands for editing lightweight markup"/>

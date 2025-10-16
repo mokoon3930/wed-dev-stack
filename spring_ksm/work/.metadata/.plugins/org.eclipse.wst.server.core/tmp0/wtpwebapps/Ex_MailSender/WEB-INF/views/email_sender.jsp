@@ -42,10 +42,10 @@
 				
 				if( check_input.value == res ){
 					mail_check_warn.innerHTML = "인증성공";
-					mail_check_warn.style.color = "#28a745";
+					mail_check_warn.style.color = "#28a745"; // 인증번호 상태확인 초록
 				}else{
 					mail_check_warn.innerHTML = "인증번호 불일치";
-					mail_check_warn.style.color = "#dc3545";
+					mail_check_warn.style.color = "#dc3545"; // 인증번호 상태확인 빨강
 				}				
 				
 				

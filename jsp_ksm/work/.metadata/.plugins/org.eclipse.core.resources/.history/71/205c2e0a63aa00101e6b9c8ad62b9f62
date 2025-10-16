@@ -1,0 +1,77 @@
+/* 전체 배경 & 폰트 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: rgb(192, 192, 192);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* 검색창 */
+form {
+  margin: 20px 0;
+}
+
+form input[name="search_txt"] {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid rgb(65, 95, 126);
+  border-radius: 5px;
+}
+
+form input[type="button"] {
+  padding: 10px 20px;
+  margin-left: 5px;
+  background: #4a74f8;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 결과 테이블 */
+#resTable {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+/* 행 전체 */
+#resTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* 이미지 */
+#resTable td:first-child {
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+}
+
+#resTable td:first-child img {
+  width: 80px;
+  height: 110px;
+  object-fit: contain;
+  background: #f9f9f9;
+}
+
+/* 책 정보 셀 */
+#resTable td:last-child {
+  padding: 15px;
+  font-size: 15px;
+  text-align: left;
+  line-height: 1.4;
+}
+
+#resTable td:last-child span {
+  display: block;
+  font-size: 18px;
+
+  margin-bottom: 5px;
+  color: rgb(0, 0, 64);
+}
+

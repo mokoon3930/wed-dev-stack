@@ -12,3 +12,8 @@
 9월 26, 2025 08:50:03.380 [7088:7656:0926/085003.379:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
 9월 26, 2025 08:51:43.778 [7088:7656:0926/085143.777:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: QUOTA_EXCEEDED
 9월 26, 2025 14:54:10.339 [7088:10256:0926/145410.339:ERROR:components\device_event_log\device_event_log_impl.cc:198] [14:54:10.339] Bluetooth: bluetooth_adapter_winrt.cc:1055 Getting Default Adapter failed.
+
+10월 16, 2025 15:18:21.979 NEW SESSION
+10월 16, 2025 15:18:21.979 Created TensorFlow Lite XNNPACK delegate for CPU.
+10월 16, 2025 15:18:22.109 [5272:12172:1016/151822.109:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: QUOTA_EXCEEDED
+10월 16, 2025 16:13:28.578 [5272:13348:1016/161328.577:ERROR:mojo\public\cpp\bindings\lib\interface_endpoint_client.cc:732] Message 0 rejected by interface blink.mojom.WidgetHost
