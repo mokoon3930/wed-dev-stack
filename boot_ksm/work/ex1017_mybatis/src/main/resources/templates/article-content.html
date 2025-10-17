@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상세보기</title>
+
+    <script>
+        function del(id) {
+            if (confirm("정말 삭제하시겠습니까?")) {
+                location.href = '/delete?id=' + id;
+            }
+        }
+    </script>
+
+</head>
+<body>
+<section class="container">
+    <h1>상세보기</h1>
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <td th:text="${vo.id}"></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td th:text="${vo.title}"></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td th:text="${vo.description}" style="white-space:pre"></td>
+        </tr>
+        <tr>
+            <td>작성일</td>
+            <td th:text="${#dates.format(vo.created, 'yyyy-MM-dd HH:mm:ss')}"></td>
+        </tr>
+        <tr>
+            <td>수정일</td>
+            <td th:text="${#dates.format(vo.updated, 'yyyy-MM-dd HH:mm:ss')}"></td>
+        </tr>
+    </table>
+
+    <input type="button" value="목록으로"
+           th:onclick="|location.href='@{/list}'|">
+    <input type="button" value="수정"
+           th:onclick="|location.href='@{/edit(id=${vo.id})}'|">
+    <input type="button" value="삭제"
+           th:onclick="|del(${vo.id})|">
+</section>
+</body>
+</html>
