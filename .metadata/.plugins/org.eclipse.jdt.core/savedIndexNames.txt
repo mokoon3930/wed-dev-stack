@@ -1,0 +1,23 @@
+INDEX VERSION 1.134+C:\Users\rkdtj\Documents\GitHub\wed-dev-stack\.metadata\.plugins\org.eclipse.jdt.core
+3277401216.index
+1863455986.index
+672051625.index
+342453910.index
+1245301695.index
+1955772453.index
+3591359447.index
+1155994272.index
+822199850.index
+252917724.index
+1865797976.index
+3866034879.index
+899522538.index
+1754021082.index
+4214914286.index
+1630602044.index
+1810723493.index
+855263936.index
+1864729295.index
+717027054.index
+2519940508.index
+26193014.index

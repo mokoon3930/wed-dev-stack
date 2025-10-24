@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.kh.stream.inrermediate&apos; to &apos;com.kh.stream.intermediate&apos;&#x0D;&#x0A;- Original project: &apos;12_APL&apos;&#x0D;&#x0A;- Original element: &apos;12_APL/src/com.kh.stream.inrermediate&apos;&#x0D;&#x0A;- Renamed element: &apos;12_APL/src/com.kh.stream.intermediate&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.kh.stream.inrermediate&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.kh.stream.inrermediate" name="com.kh.stream.intermediate" qualified="false" references="true" stamp="1751287488403" textual="false" version="1.0"/>
+</session>
